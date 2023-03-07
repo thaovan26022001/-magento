@@ -1,0 +1,24 @@
+input[type="text"]{
+    height: 100%;
+    padding-right: 12px;
+    overflow: hidden;
+
+}
+
+._keyfocus *:focus, input:not([disabled]):focus, textarea:not([disabled]):focus, select:not([disabled]):focus {
+    display: block;
+}
+input:not([disabled]):focus {
+    box-shadow: none;
+}
+
+@media only screen and (min-width: (@screen__m)) {
+    input[type="text"]{
+        border:none;
+    }
+}
+
+
+.block-search .label:before {
+    height:38px;
+}
