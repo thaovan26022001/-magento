@@ -7,7 +7,23 @@
  -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 <body>
+
+
+    <move element="header.panel.wrapper" destination="header-wrapper" after="-"/>
+    <referenceContainer name="top.links" remove="true"/>
+    <referenceContainer name="header.container" htmlClass="header"></referenceContainer>
+    
     
 
+
+     <referenceContainer name="header.container">
+            <container name="header.panel.wrapper" htmlClass="panel wrapper" htmlTag="div" before="-">
+                <container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="panel header"> 
+                <block  class="Magento\Framework\View\Element\Template" name="headerMobi" template="Magento_Theme::headerMobile.phtml"></block>
+                </container>
+            
+            </container>
+    </referenceContainer>
+    
 </body>
 </page>
