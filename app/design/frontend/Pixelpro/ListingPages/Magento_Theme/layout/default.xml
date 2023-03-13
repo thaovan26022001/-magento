@@ -10,20 +10,21 @@
 
 
     <move element="header.panel.wrapper" destination="header-wrapper" after="-"/>
-    <referenceContainer name="top.links" remove="true"/>
+    <move element="header.panel.wrapper" destination="header-wrapper" after="-"/>
     <referenceContainer name="header.container" htmlClass="header"></referenceContainer>
+    <referenceContainer name="header-wrapper" htmlClass="header__content"/>
+    <move element="header__links" destination="header-wrapper" after="-"/>
+    <move element="header__search" destination="header-wrapper" after="-"/>
     
-    
+    <container name="header__links" htmlClass="header__links" htmlTag="div">
+        <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::account_menu.phtml"></block>
+    </container>
+    <container name="header__search" htmlClass="header__search" htmlTag="div">
+        <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::header_search.phtml"></block>
+    </container>
 
 
-     <referenceContainer name="header.container">
-            <container name="header.panel.wrapper" htmlClass="panel wrapper" htmlTag="div" before="-">
-                <container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="panel header"> 
-                <block  class="Magento\Framework\View\Element\Template" name="headerMobi" template="Magento_Theme::headerMobile.phtml"></block>
-                </container>
-            
-            </container>
-    </referenceContainer>
-    
+
+     
 </body>
 </page>
