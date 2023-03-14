@@ -1,18 +1,4 @@
-.page {
-    &-main {
-        max-width: 100%;
-        padding: 0;
-        margin: 0;
-        & .account {
-            padding-top: 90px;
 
-        }
-    }
-
-    &-wrapper {
-        overflow: hidden;
-    }
-}
 
 
 ul, ol {
@@ -36,15 +22,14 @@ ul > li, ol > li {
 
 
 
-.block-search {
-    margin-top: 0;
-}
 .minicart-wrapper {
-    margin: 0;
+    margin-left: 10px;
+    margin-top: 0;
 }
 
 .block-search {
     order: -1;
+    margin-top: 0;
     & .control {
         border: none;
         position: absolute;
@@ -60,8 +45,6 @@ ul > li, ol > li {
 .page-header 
 .header.panel, 
 .header__content, 
-.footer.content, 
-.page-main, 
 .page-wrapper > .widget, 
 .page-wrapper > .page-bottom, 
 .block.category.event, 
@@ -69,14 +52,63 @@ ul > li, ol > li {
     padding: 0 12px;
 }
 
+.page-header .panel.wrapper {
+    border: none;
+}
 
 .block-collapsible-nav {
     top: 30px;
 }
 
-.header__content:before,
-.header__content:after {
-    display: none;
+
+.empty,
+.fieldset > .field {
+    .fonts-1();
+
+}
+
+.block-collapsible-nav {
+    top: 30px;
+}
+
+.fieldset > .field {
+    .fonts-1();
+
+}
+
+.abs-reset-list > li, 
+.bundle-options-container .block-bundle-summary .bundle.items > li, 
+.product-items > li, 
+.prices-tier > li, 
+.cart-container .checkout-methods-items > li, 
+.opc-wrapper .opc > li, 
+.opc-progress-bar > li, 
+.checkout-agreements-items > li, 
+.items > li, 
+.block-wishlist-management .wishlist-select-items > li, 
+.paypal-review .items-qty > li, 
+.order-details-items .items-qty > li, 
+.footer.content ul > li, 
+.block-banners .banner-items > li, 
+.block-banners-inline .banner-items > li, 
+.block-event .slider-panel .slider > li {
+    margin-bottom: 20px;
+}
+
+.page {
+    &-main {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+        & .account {
+            padding-top: 90px;
+
+        }
+    }
+
+    &-wrapper {
+        overflow: hidden;
+    }
 }
 
 .header {
@@ -101,3 +133,8 @@ ul > li, ol > li {
 
 
 
+.footer{
+    & .content {
+        padding: 0 32px;
+    }
+}
