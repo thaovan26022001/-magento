@@ -40,6 +40,9 @@ ul > li, ol > li {
         
     }
 }
+
+.column.main,
+.page-title,
 .navigation, 
 .breadcrumbs, 
 .page-header 
@@ -49,7 +52,7 @@ ul > li, ol > li {
 .page-wrapper > .page-bottom, 
 .block.category.event, 
 .top-container {
-    padding: 0 12px;
+    padding: 0 32px;
 }
 
 .page-header .panel.wrapper {
@@ -135,6 +138,15 @@ ul > li, ol > li {
 
 .footer{
     & .content {
-        padding: 0 32px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+.privacy-policy-content {
+    & ul {
+        & li {
+            color:  @text-color;
+        }
     }
 }
