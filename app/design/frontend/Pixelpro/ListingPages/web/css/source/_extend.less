@@ -1,3 +1,5 @@
+@import '_base.less';
+
 .article {
     &__container {
         padding-bottom: 20px;
@@ -64,8 +66,109 @@
 }
 
 
+.container {
+    &-nav {
+        padding-left: 32px;
+        padding-right: 32px;
+
+        &-second {
+            margin-bottom: 24px;
+        }
+    }
+    &__title {
+        padding-bottom: 20px;
+    }
+
+    &__list {
+        display: flex;
+        padding: 16px 0;
+        &-item {
+            
+            flex: 1;
+            height: 44px;
+            text-align: center;
+            border-bottom: 1px solid @border-color;
+            &:last-child {
+                border-bottom: 1px solid @noti-color;
+            }
+        }
+
+        &-link {
+            .fonts-1();
+            color: @black-color-text;           
+            line-height: 44px;
+        }
+    }
+
+    &__border {
+        border: 1px solid @gray-line-color;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+
+    &__product {
+       
+        &-link {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            min-width: 160px;
+          
+            & h3 {
+                .fonts-1();
+                color: @black-color-text;
+                width: 50%;
+                text-align: center;
+            }
+
+            & img {
+                width: 50%;
+            }
+        }
+    }
 
 
+    &__cate {
+        padding-left: 32px;
+        padding-right: 32px;
+        &-desc {
+            & p {
+                padding: 20px 0;
+                text-align: justify;
+            }
+        }
+
+        &-img {
+            
+            align-self: flex-end;
+
+            &-position {
+                display: flex;
+                flex-direction: row-reverse;
+            }           
+        }
+
+        &-image {
+            padding-top: 20px;
+            border-radius: 6px;
+        }
+    }
+
+    &__rectangle {
+        float: right;
+        right: 5%;
+        top: 20%;          
+        order: -1;
+        & svg {
+            &:last-child {
+                position: absolute;
+                left: -15px;
+                top: calc(100% - 5px);
+            }
+        }
+    }
+
+}
 
 
 
@@ -87,4 +190,4 @@
 @import '_grids.less';
 @import '_buttons.less';
 @import '_fonts.less';
-@import '_base.less';
+

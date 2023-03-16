@@ -1,10 +1,5 @@
 @screen__s: 420px;
 
-
-@media only screen and (max-width: (@screen__s )) {
-
-}
-
 @media only screen and (max-width: (@screen__m )) {
     header {
         border-bottom:  1px solid @border-color;
@@ -21,8 +16,20 @@
             line-height: 40px;
         }
     }
+    .nav-toggle{
+        margin-left: 16px;
+    }
 
 }
+
+@media only screen and (max-width: (@screen__s )) {
+    .nav-toggle {
+        margin-left: -12px;
+    }
+
+}
+
+
 
 @media only screen and (min-width: (@screen__m )) {
     .navigation, 
@@ -77,13 +84,18 @@
     }
 
     .level-top .ui-menu-item-wrapper {
-        & span {
+        & span:nth-child(2){
+
             .fonts-1();
         }
+    }
+    .navigation li.level0 {
+        padding: 0 10px 0 12px;
     }
 
     .article {
         &__infor {   
+            
             &__submenu {
                 &-item {
                     &:hover {
@@ -97,6 +109,26 @@
 
             &-content {
                 .fonts-8();
+            }
+        }
+    }
+
+    .product-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        overflow: hidden;
+    }
+    .products-list .product-item-photo {
+        padding: 0;
+    }
+
+    .container {
+
+        &__cate {
+            &-desc {
+                & p {
+                    .fonts-8();
+                }
             }
         }
     }
@@ -138,6 +170,79 @@
         }
 
         
+    }
+    .container {
+
+        &__list {
+            &-item {
+                flex: 0 0 125px;
+            }
+        }
+
+        &__border {
+            border: none;
+            margin-right: 0;
+            border: 1px solid @white-color;
+            &:hover {
+                border: 1px solid @gray-line-color;
+                & svg {
+                    display: none;
+                }
+            }
+        }
+
+        &__product {
+            
+            &-link {
+                position: relative;
+                & h3 {
+                    .fonts-15();
+                    color: @text-color;
+                }
+
+                & svg {
+                    
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+        }
+
+        &__cate {
+            position: relative;
+
+            &-img {
+                & img {
+                    width: 55%;
+                }
+                &-position { 
+                    display: flex;
+                }
+            }
+
+
+            &-extends {
+                align-items: center;
+                justify-content: center;
+            }
+            &-desc {
+                max-width: 370px;               
+                & h2 {
+                    text-align: left;
+                }
+            }
+
+            &-image {
+                padding-top: 0;
+                order: -1;               
+            }
+        }
+
+    }
+
+    .product-items {
+        display: flex;
     }
 
 }
