@@ -74,6 +74,10 @@
         &-second {
             margin-bottom: 24px;
         }
+
+        & h2 {
+            margin-top: 0;
+        }
     }
     &__title {
         padding-bottom: 20px;
@@ -168,8 +172,217 @@
         }
     }
 
+    &__shop {
+
+        &-img {
+            position: relative;
+            padding: 0 32px;
+            & video {
+                width: 100%;
+            }
+        
+        }
+        
+
+        &-card {
+            
+            & h2 {               
+                padding-bottom: 16px;              
+            }
+            & p {             
+                padding-bottom: 24px;            
+            }
+
+            &-btn {
+                background-color: @black-color-text;
+                color: @white-color;
+                width: 96px;
+
+                &:hover {
+                    background-color: @noti-color;
+                    color: @white-color;
+                }
+            }
+            
+           
+        }
+
+        &-corner-m {
+            position: absolute;
+            left: -10px;
+            top: calc(100% - 6px);
+        }
+
+        &-corner-l {
+            position: absolute;
+            right: 16px;
+            top: 5%;
+        }
+        
+    }
+
 }
 
+.banner {
+    background-color: @black-color-text;
+    margin-top: 80px;
+    
+  
+    &__desc {
+
+        &-content {
+            padding-bottom: 60px
+        }
+        &-title {
+            color: @white-color;
+            padding-top: 24px;
+        }
+        
+        &-paragraph {         
+            color: @white-color;
+            padding: 24px 0;
+        }
+
+        &-btn {
+           background-color: @white-color;
+           color: @black-color-text;
+           width: 140px;
+        }
+    }
+}
+
+.rings {
+    position: relative;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    &__rectangle{
+        order: -1;
+        top: 20%;
+        display: none;
+        & svg {
+            &:last-child {
+                position: absolute;
+                left: 32px;
+                top: 32px;
+            }
+        }           
+    }
+ 
+    &__text {     
+        &-view {
+            padding-top: 38px;
+            display: flex;
+            align-items: center;
+            & p:hover{
+                color: @noti-color;
+            }
+        }
+    }
+
+    &__img {
+        position: relative;
+        &-img {
+            margin-top: 32px;           
+        }
+
+        & h4 {            
+            text-transform: capitalize;
+        }
+
+        &-text-first {
+            bottom: 20px;
+            position:absolute;
+            left: 10%;
+        }
+
+        &-block {
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            left: 10%;
+
+            & button {
+                margin-top: 16px;
+            }
+        }      
+    }
+
+    &__content {
+        & h2 {
+            padding-bottom: 16px;
+        }
+    }
+
+    &__video {
+       
+        &-img {
+            margin-top: 20px;
+            position: relative;
+            order:-1;
+            & img {
+                width: 100%;
+            }
+        }
+
+        &-stop {
+            & .stop,
+            & svg {
+              position: absolute;
+              right: 50%;
+              transform: translate(50%, -50%);  
+            }
+
+            & .stop {
+                top: 50%;
+            }
+
+            &-small {
+                top: 20%;
+            }
+
+            &-big {
+                top: 50%;
+            }
+
+        }     
+        
+        &-bottom {
+            position: absolute;
+            top: 5%;
+            float: left;
+            left: 35%;
+        }   
+        
+        &-above {
+            position: absolute;
+            top: 25%;
+            right: 0;
+            float: right;
+        }
+    }
+}
+
+.best__seller {
+    padding: 0 32px;
+    & h2 {
+        padding-bottom: 24px;
+        
+    }
+    &-img {
+        width: 100%;
+        padding-bottom: 16px;
+    }
+
+    & p {
+        .fonts-3();
+        padding-bottom: 24px;
+
+        &:hover{
+            color: @noti-color;
+        }
+    }
+}
 
 
 
