@@ -272,10 +272,40 @@ ul > li, ol > li {
     }
 }
 
-.block.newsletter .field.newsletter {
-    max-width: 100%;
+.footer__subscribe,
+.main__subscribe-block {
+    & .block.newsletter {
+        max-width: 100%;
+        width: 100%;
+
+        & .field.newsletter {
+            max-width: 100%;
+        }
+
+        & .action.subscribe {
+            background-color: @noti-color;
+        }
+    }
 }
 
-.block.newsletter .action.subscribe {
-    border-radius: 2px;
+.footer__subscribe{
+    & .block.newsletter {
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 76px;
+
+    }
+}
+
+
+.main.content .block.newsletter {
+    display: none;
+}
+
+.block-products-list{
+    padding: 80px  32px 0 32px;
+}
+
+.page-layout-1column .block.widget .products-grid .product-item {
+    width: 100%;
 }

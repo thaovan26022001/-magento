@@ -10,17 +10,127 @@
 
 
     <move element="header.panel.wrapper" destination="header-wrapper" after="-"/>
-    <move element="header.panel.wrapper" destination="header-wrapper" after="-"/>
-    <referenceContainer name="header.container" htmlClass="header"></referenceContainer>
     <referenceContainer name="header-wrapper" htmlClass="header__content"/>
     <move element="header__links" destination="header-wrapper" after="-"/>
     <move element="header__search" destination="header-wrapper" after="-"/>
+    <move element="footer-head" destination="footer-container" before="footer__subscribe"/>
+    <referenceBlock name="copyright" remove="true"/>
+    <referenceBlock name="report.bugs" remove="true"/>
+    <move element="form.subscribe" destination="footer__subscribe" after="-"/>
+    <move element="footer" destination="footer-container" after="-"/>
+    <referenceBlock name="footer_links" remove="true"/>
+    <move element="footer-bottom" destination="footer-container" after="-"/>
+
     
     <container name="header__links" htmlClass="header__links" htmlTag="div">
         <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::account_menu.phtml"></block>
     </container>
     <container name="header__search" htmlClass="header__search" htmlTag="div">
         <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::header_search.phtml"></block>
+    </container>
+<referenceContainer name="footer-container" htmlClass="footer">
+    <container name="footer-head" as="footerHead" label="footer head" htmlTag="div" htmlClass="footer__heading" >
+        <block class="Magento\Framework\View\Element\Template" name="footer-heading" template="Magento_Theme::footer_head.phtml" ></block>
+    </container>
+
+    <container name="footer__subscribe" htmlClass="footer__subscribe p-32" htmlTag="div" label="footer Subscribe" as="footerSubscribe">
+        <block class="Magento\Framework\VIew\Element\Template" name="footerSubcribe" template="Magento_Theme::footerSubcribe.phtml"></block>
+        <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe" as="subscribe" before="-" template="Magento_Newsletter::subscribe.phtml" ifconfig="newsletter/general/active"/>         
+    </container>
+
+    <container name="footer__sponsor" as="footersponsor" label="footer sponsor" htmlTag="div" htmlClass="footer__sponsor p-32" >
+        <block class="Magento\Framework\View\Element\Template" name="footer-sponsor" template="Magento_Theme::footerSponsor.phtml" ></block>
+    </container>
+
+   <referenceContainer name="footer" htmlClass="row footer__contact p-32">
+        <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-2">
+            <arguments>
+                <argument name="css_class" xsi:type="string">col c-12 m-4 l-2 footer__contact-help  </argument>
+            </arguments>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                  <arguments>
+                      <argument name="label" xsi:type="string" translate="true">
+                           Orders and Returns                     
+                      </argument>
+                      <argument name="path" xsi:type="string">http://192.168.31.206/sales/guest/form/</argument>
+                  </arguments>
+            </block>
+            
+            <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                  <arguments>
+                      <argument name="label" xsi:type="string" translate="true">
+                           Guides , Education                      
+                      </argument>
+                      <argument name="path" xsi:type="string">http://192.168.31.206/guides-education</argument>
+                  </arguments>
+            </block>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-3">
+            <arguments>
+                <argument name="css_class" xsi:type="string">col c-12 m-4 l-2 footer__contact-help  </argument>
+            </arguments>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                  <arguments>
+                      <argument name="label" xsi:type="string" translate="true">
+                           About Us                      
+                      </argument>
+                      <argument name="path" xsi:type="string">http://192.168.31.206/about-us</argument>
+                  </arguments>
+            </block>
+
+            
+            <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                  <arguments>
+                      <argument name="label" xsi:type="string" translate="true">
+                           Payment                      
+                      </argument>
+                      <argument name="path" xsi:type="string">http://192.168.31.206/pay</argument>
+                  </arguments>
+            </block>
+        </block>
+
+        <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-4">
+            <arguments>
+                <argument name="css_class" xsi:type="string">col c-12 m-4 l-2 footer__contact-help  </argument>
+            </arguments>
+            
+            <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                  <arguments>
+                      <argument name="label" xsi:type="string" translate="true">
+                           Benefits                    
+                      </argument>
+                      <argument name="path" xsi:type="string">http://192.168.31.206/benefits</argument>
+                  </arguments>
+            </block>
+            
+            <block class="Magento\Framework\View\Element\Html\Link\Current" >
+                  <arguments>
+                      <argument name="label" xsi:type="string" translate="true">
+                           Contact Us                      
+                      </argument>
+                      <argument name="path" xsi:type="string">http://192.168.31.206/contact/</argument>
+                  </arguments>
+            </block>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-5">
+            <arguments>
+                <argument name="css_class" xsi:type="string">col c-12 m-4 l-2 footer__contact-help  </argument>
+            </arguments>
+            
+
+            <block class="Magento\Framework\View\Element\Template" name="footer-contact" template="Magento_Theme::footer.phtml" ></block>  
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-6">
+            <arguments>
+                <argument name="css_class" xsi:type="string">col c-12 m-12 l-4 footer__contact-logo p-80 </argument>
+            </arguments>
+            <block class="Magento\Framework\View\Element\Template" name="footer-logo" template="Magento_Theme::footer-logo.phtml" ></block>  
+        </block>
+   </referenceContainer>
+</referenceContainer>
+
+    <container name="footer-bottom" as="footerBottom" label="footer bottom" htmlTag="div" htmlClass="footer__bottom p-32" >
+        <block class="Magento\Framework\View\Element\Template" name="footer-finish" template="Magento_Theme::footer-bottom.phtml" ></block>
     </container>
 
 

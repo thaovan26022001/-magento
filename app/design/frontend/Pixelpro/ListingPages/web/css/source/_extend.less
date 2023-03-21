@@ -175,6 +175,7 @@
     &__shop {
         padding-left: 32px;
         padding-right: 32px;
+        margin-bottom: 80px;
 
         &-img {
             position: relative;
@@ -213,6 +214,10 @@
             right: 16px;
             top: 5%;
         }
+
+        &-main {
+            position: relative;
+        }
         
     }
 
@@ -243,7 +248,7 @@
 
 .banner {
     background-color: @black-color-text;
-    margin-top: 80px;
+
     
   
     &__desc {
@@ -383,7 +388,7 @@
 }
 
 .best__seller {
-    padding: 0 32px;
+    padding: 80px 32px 0 32px;
     & h2 {
         padding-bottom: 24px;
         
@@ -464,6 +469,7 @@
     position: relative;
     padding-left: 32px;
     padding-right: 32px;
+    margin-bottom: 25px;
     &__title {
         padding-bottom: 32px;
         text-transform: capitalize;
@@ -569,34 +575,52 @@
 
 
 //main-subscribe
-.main__subscribe {
-    background-color: @black-color;
-    position: relative;
-
-    &-text {
-        color: @white-color;
-    }
-
-    &-btn {
-        background-color: @noti-color;
-        height: 36px;
-        width: 40px;        
-        cursor: pointer;
-        border: none;
+.main {
+    &__subscribe {
+        background-color: @black-color;
+        position: relative;
+    
+        &-text {
+            color: @white-color;
+        }
+    
+        &-btn {
+            background-color: @noti-color;
+            height: 36px;
+            width: 40px;        
+            cursor: pointer;
+            border: none;
+        }
+        &-block {
+            padding: 57px 0;
+            display: grid;
+            justify-content: center;
+            row-gap: 24px;
+        
+        }
     }
 }
 
 
 //cover-white
-.cover__white {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: calc(100% + 10px);
-    background: linear-gradient(0, #ffffff 0%, rgba(255, 255, 255, 0) 91.21%);
-    display: flex;
-    justify-content: center;
-    align-items: flex-end; 
+
+
+.cove {
+    &__white {
+        position: absolute;
+        top: 10%;
+        width: 100%;
+        height: calc(100% + 10px);
+        background: linear-gradient(0, #ffffff 0%, rgba(255, 255, 255, 0) 91.21%);
+        display: flex;
+        justify-content: center;
+        align-items: flex-end; 
+        &-btn{
+            background-color: @white-color;
+            color: @black-color-text;
+            border: 1px solid @black-color-text;
+        }
+    }
 }
 
 .main-rectangle {
@@ -606,7 +630,6 @@
 }
 
 .footer {
-    padding-top: 64px;
     &__heading {
         background-color: @noti-color;
         padding: 0 19px;       
@@ -640,11 +663,12 @@
     &__subscribe {
         background-color: @header-color;
         position: relative;
+        display: grid;
+        justify-content: center;
+        row-gap: 24px;
         
         &-block {
-            padding: 57px 0;
-            display: grid;
-            justify-content: center; 
+            padding-top: 57px;
             row-gap: 24px;
         }
     }
@@ -713,13 +737,15 @@
             padding-bottom: 22px;
 
             & h2 {
-                padding: 0 12px 13px 0;
+                padding-right: 12px;
+                margin: 0;
         
                 color: @black-color-text;
             }
             &-point {
                 .fonts-10();
                 color: @black-color-text;
+                padding-left: 12px;
             }
         }
 
@@ -739,11 +765,14 @@
         }
 
         &-help {
-            & li {
+            padding-bottom: 20px;
+            & .nav.item{
+                & a {
+                    .fonts-10();
+                    color: @black-color-text;
+                    line-height: 1.8;
+                }
 
-                .fonts-10();
-                color: @black-color-text;
-                line-height: 1.8;
             }
             
         }
@@ -824,10 +853,7 @@
 }
 
 
-.footer__subscribe-block .block.newsletter {
-    max-width: 100%;
-    width: 100%;
-}
+
 
 
 
