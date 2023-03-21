@@ -23,7 +23,7 @@
 
 .rectangle {
     position: absolute;
-    display: flex;
+
     flex-direction: column;
 }
 
@@ -42,6 +42,23 @@
 .p-32 {
     padding: 0 32px;
 }
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+  }
+
+  .next {
+    right: 0;
+  }
+  
+
 
 @media only screen and (min-width: (@screen__m)) {
     .hide-on-tablet {

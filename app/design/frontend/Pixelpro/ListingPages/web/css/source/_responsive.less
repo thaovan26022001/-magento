@@ -20,6 +20,10 @@
         margin-left: 16px;
     }
 
+    .overflow-x {
+        overflow-x: scroll;
+    }
+
 }
 
 @media only screen and (max-width: (@screen__s )) {
@@ -40,6 +44,10 @@
 
 
 @media only screen and (min-width: (@screen__m )) {
+    .overflow-x {
+        overflow: hidden;
+    }
+
     .navigation, 
     .breadcrumbs, 
     .page-header 
@@ -148,6 +156,30 @@
             }
             &-btn {
                 width: 250px;                  
+            }
+        }
+    }
+    .footer {
+        &__sponsor {
+    
+            &-list {    
+    
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                row-gap: 16px;
+            }
+        }
+        &__contact {
+            &-help {
+                &:last-child {
+                    padding-bottom: 60px;
+                }
+            }
+
+            &-rating {
+                & h2 {
+                    .fonts-10();
+                    
+                }
             }
         }
     }
@@ -346,6 +378,163 @@
             padding-top: 60px;
         }
     }
+
+    .topic {
+        position: relative;
+
+        &__item {
+            padding-top: 40px;
+        }
+
+        &__content {
+            
+            align-items: center;
+            justify-content: center;
+            order: 1;
+            
+            &-desc {
+                width: 418px;
+            }
+           
+            &-item {
+                & h5 {
+                    .fonts-3();
+                }
+
+                & p {
+                    .fonts-1();
+                }
+            }
+        }
+
+        &__first {
+            order: 1;
+        }    
+    }
+
+    .paragraph {
+        &__content {
+            &-list {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    .benefits {
+        &-col {
+            margin-bottom: 0;
+        }
+    }
+
+    .title {
+        &__bottom {
+            &-left {
+                left: 5px;
+            }
+
+            &-right {
+                right: -8px;
+            }
+        }
+
+        &__left {
+            left: 9px;
+        }      
+    }
+
+    .cover__white {
+        & span {
+            padding-top: 20px;
+        }
+    }
+
+    .footer {
+        &__heading {
+            height: 48px;
+
+            &-list {
+                display: flex;
+                justify-content: space-evenly; 
+                align-items: center;
+                padding: 12px 0;
+            }
+        }
+
+        &__subscribe  {
+            & p {
+                .fonts-1();
+            }
+        }
+
+        &__sponsor {
+            &-list {
+                display: flex;
+            }
+            &-item {
+                flex: 1;   
+                &-link {
+                    position: relative;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        height: 60%;
+                        border-left: 1px solid #e5e5e5;
+                        transform: translateY(-50%);
+                        display: block;
+                    }
+                }  
+                &:last-child a{
+                    &::before {
+                        display: none;
+                    }
+                    
+                }     
+            }
+
+            &-img {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+        }
+
+        &__contact {
+            &-help {
+                padding-top: 79px;
+            }
+
+            &-finish {
+                padding-top: 0;
+            }
+        }
+
+        &__bottom {
+            .display-flex();
+            align-items: center;
+
+
+            &-list {
+                display: flex;
+                order: 1;
+                padding: 14px 0 0 0;
+            }
+
+            &-item {
+                padding-right: 40px;
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+          
+
+    .prev, .next {
+        top: 50%;
+    }
+  
 
 }
 
