@@ -1,6 +1,5 @@
 
 
-
 ul, ol {
     margin: 0;
 }
@@ -21,15 +20,14 @@ ul > li, ol > li {
 }
 
 
-
 .minicart-wrapper {
     margin-left: 10px;
     margin-top: 0;
 }
 
 .block-search {
+    margin: 0 10px;
     order: -1;
-    margin-top: 0;
     & .control {
         border: none;
         position: absolute;
@@ -42,7 +40,6 @@ ul > li, ol > li {
 }
 
 
-
 .page-header .panel.wrapper {
     border: none;
 }
@@ -50,28 +47,7 @@ ul > li, ol > li {
 .block-collapsible-nav {
     top: 30px;
 }
-.navigation .level0 > .level-top {
-    padding-left: 20px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
 
-.navigation{
-    & ul {
-        padding: 0;
-    }
-
-}
-
-.level-top .ui-menu-item-wrapper {
-    display: flex;
-    align-items: center;
-    & span:nth-child(2){
-
-        .fonts-3();
-    }
-}
 
 .empty,
 .fieldset > .field {
@@ -79,13 +55,13 @@ ul > li, ol > li {
 
 }
 
-.block-collapsible-nav {
-    top: 30px;
-}
-
-.fieldset > .field {
-    .fonts-1();
-
+.options {
+    & dd {
+        & ol {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
 }
 
 .abs-reset-list > li, 
@@ -110,7 +86,7 @@ ul > li, ol > li {
 .page {
     &-main {
         max-width: 100%;
-        padding: 0;
+        padding: 0 32px;
         margin: 0;
         & .account {
             padding-top: 90px;
@@ -121,17 +97,87 @@ ul > li, ol > li {
     &-wrapper {
         overflow: hidden;
     }
+
+    &-title {
+        &-wrapper {
+            display: none;
+
+        }
+
+    }
+}
+
+.navigation .level0 > .level-top {
+    padding: 0 0 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.navigation{
+    & ul {
+        padding: 0;
+    }
+    
+
+}
+.navigation .parent .level-top:after{
+    top: 0;
 }
 
 .navigation .level0 .submenu li.parent > a > .ui-menu-icon:after {
     font-size: 24px;
 }
 
+.level-top .ui-menu-item-wrapper {
+    display: flex;
+    align-items: center;
+    & span:nth-child(2){
+
+        .fonts-3();
+    }
+}
+
+
+.header {
+    &__content {
+        height: 58px;
+        .display-flex();
+        align-items: center;
+        position: relative;
+        
+        &::before , &::after {
+            display: none;
+        }
+    }
+
+    &__links{
+        padding-top: 8px;
+    }
+
+    &__search {
+        padding-top: 4px;
+    }
+
+}
+
+.options .items {
+    align-items: flex-start;
+    & .item{
+        &::after{
+            content: '\e622';     
+        }
+    }
+
+}
 
 
 .items {
-    display: flex;
     align-items: center;
+}
+
+.options .items,
+.items {
+    display: flex;
 
     & li{
         margin-right: 20px;
@@ -146,12 +192,12 @@ ul > li, ol > li {
             content: '\e608';
             font-family: 'icons-blank-theme';
             vertical-align: middle;
-            display: inline-block;
             font-weight: normal;
             overflow: hidden;
             speak: none;
             text-align: center;
         }
+
         &:last-child {
             &::after {
                 display: none;
@@ -160,17 +206,22 @@ ul > li, ol > li {
     }
 }
 
-.options {
-    & dd {
-        & ol {
-            flex-direction: column;
-            align-items: flex-start;
-        }
+
+
+
+.columns{
+    & .sidebar-additional{
+        display: none;
     }
 }
 
-.block-new-products {
-    padding: 80px 32px;
+.block {
+
+    &-new {
+        &-products {
+            padding: 80px 32px;
+        }
+    }
 }
 
 
@@ -186,6 +237,9 @@ ul > li, ol > li {
 .widget .block-title > strong {
     .fonts-4();
 }
+
+//PRODUCT
+
 .product {
     &-items {
         display: flex;
@@ -233,42 +287,18 @@ ul > li, ol > li {
 .product-item-actions .actions-secondary > .action.tocompare {
     display: block;
 }
-
-.header {
-
-    &__content {
-
-        height: 58px;
-        .display-flex();
-        align-items: center;
-        position: relative;
-        
-        &::before , &::after {
-            display: none;
-        }
-    }
-    &__links {
-        padding-top: 8px;
-    }
-    &__search {
-        padding-top: 4px;
-    }
-}
-
-
-
-.footer{
-    & .content {
-        padding-left: 32px;
-        padding-right: 32px;
-    }
-}
-
 .privacy-policy-content {
     & ul {
         & li {
             color:  @text-color;
         }
+    }
+}
+
+.footer{
+    &.content {
+        padding-left: 32px;
+        padding-right: 32px;
     }
 }
 
@@ -308,4 +338,11 @@ ul > li, ol > li {
 
 .page-layout-1column .block.widget .products-grid .product-item {
     width: 100%;
+}
+
+
+.block.filter{
+    & .title{
+        padding:0;
+    }
 }

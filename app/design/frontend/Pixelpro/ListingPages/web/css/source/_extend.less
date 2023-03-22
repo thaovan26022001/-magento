@@ -1,4 +1,6 @@
+@import '_resets.less';
 @import '_base.less';
+@import '_grids.less';
 
 .article {
     &__container {
@@ -24,6 +26,7 @@
         }
         
     }
+
     &__infor {
         &-title {
             .fonts-12();
@@ -38,7 +41,18 @@
             text-align: justify;
             padding-bottom: 64px;
         }
+
+        &-discount {
+            .fonts-1();
+            & span {
+                border-radius: 16px;
+                margin-right: 24px;
+                padding: 8px;
+                background-color: @header-color;
+            }
+        }
     }
+
     &__submenu {
         &-item {
             text-transform: uppercase;
@@ -65,7 +79,6 @@
   
 }
 
-
 .container {
     &-nav {
         padding-left: 32px;
@@ -74,7 +87,6 @@
         &-second {
             margin-bottom: 24px;
         }
-
         & h2 {
             margin-top: 0;
         }
@@ -131,7 +143,6 @@
         }
     }
 
-
     &__cate {
         padding-left: 32px;
         padding-right: 32px;
@@ -143,8 +154,8 @@
         }
 
         &-img {
-            
             align-self: flex-end;
+            
 
             &-position {
                 display: flex;
@@ -163,6 +174,7 @@
         right: 5%;
         top: 20%;          
         order: -1;
+        display:none;
         & svg {
             &:last-child {
                 position: absolute;
@@ -175,10 +187,12 @@
     &__shop {
         padding-left: 32px;
         padding-right: 32px;
+        position: relative;
         margin-bottom: 80px;
 
         &-img {
             position: relative;
+          
             & video {
                 width: 100%;
             }
@@ -196,7 +210,6 @@
             }
 
             &-btn {
-
                 width: 96px;
             }
             
@@ -244,6 +257,8 @@
         }
     }
 
+
+ 
 }
 
 .banner {
@@ -267,17 +282,17 @@
         }
 
         &-btn {
-           width: 140px;
            background-color: @white-color;
            color: @black-color-text;
+           width: 140px;
         }
     }
 }
 
 .rings {
     position: relative;
-    padding-left: 32px;
     padding-right: 32px;
+    padding-left: 32px;
 
     &__rectangle{
         order: -1;
@@ -297,9 +312,11 @@
             padding-top: 38px;
             display: flex;
             align-items: center;
-            & p:hover{
+
+            & p:hover {
                 color: @noti-color;
             }
+
         }
     }
 
@@ -344,6 +361,7 @@
         &-img {
             margin-top: 20px;
             position: relative;
+
             & img {
                 width: 100%;
             }
@@ -387,8 +405,10 @@
     }
 }
 
+
 .best__seller {
     padding: 80px 32px 0 32px;
+
     & h2 {
         padding-bottom: 24px;
         
@@ -408,10 +428,9 @@
     }
 }
 
-
 .topic{
     background-color: @background-color;
-    padding: 0 32px;
+    padding:0 32px;
     &__content {
 
         &-list {
@@ -482,7 +501,6 @@
         }
     }
 }
-
 
 
 //title
@@ -603,24 +621,27 @@
 
 
 //cover-white
-
-
-.cove {
+.cover{
     &__white {
         position: absolute;
-        top: 10%;
+        top: 0;
         width: 100%;
         height: calc(100% + 10px);
         background: linear-gradient(0, #ffffff 0%, rgba(255, 255, 255, 0) 91.21%);
         display: flex;
         justify-content: center;
         align-items: flex-end; 
-        &-btn{
+    
+        &-btn {
             background-color: @white-color;
             color: @black-color-text;
             border: 1px solid @black-color-text;
+    
         }
+        
     }
+
+    
 }
 
 .main-rectangle {
@@ -629,7 +650,10 @@
     top: 50%;
 }
 
+
+
 .footer {
+
     &__heading {
         background-color: @noti-color;
         padding: 0 19px;       
@@ -771,6 +795,9 @@
                     .fonts-10();
                     color: @black-color-text;
                     line-height: 1.8;
+                    &:hover {
+                        color: @noti-color;
+                    }
                 }
 
             }
@@ -857,14 +884,9 @@
 
 
 
-
-
-
 @import '_colors.less';
-@import '_resets.less';
 @import '_responsive.less';
 @import '_breadcrumbs.less';
-@import '_grids.less';
 @import '_buttons.less';
 @import '_fonts.less';
-
+@import '_theme.less';
