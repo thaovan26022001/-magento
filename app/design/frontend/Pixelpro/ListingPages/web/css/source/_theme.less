@@ -173,6 +173,7 @@ ul > li, ol > li {
 
 .items {
     align-items: center;
+    margin-right: 20px;
 }
 
 .options .items,
@@ -180,7 +181,6 @@ ul > li, ol > li {
     display: flex;
 
     & li{
-        margin-right: 20px;
         &::after {
             display: inline-block;
             text-decoration: none;
@@ -208,18 +208,30 @@ ul > li, ol > li {
 
 
 
-
-.columns{
-    & .sidebar-additional{
-        display: none;
-    }
-}
-
 .block {
 
     &-new {
         &-products {
             padding: 80px 32px;
+        }
+    }
+
+    &.filter{
+        & .title{
+            padding:0;
+        }
+        & .content {
+            & .options dt {
+                padding-bottom: 10px;
+                color: @listing-text-color;
+            }
+        }
+    }
+
+    &-products {
+        &-list {
+            padding: 80px  32px 0 32px;
+
         }
     }
 }
@@ -244,6 +256,11 @@ ul > li, ol > li {
     &-items {
         display: flex;
         overflow-x: scroll;
+    }
+    &-item {
+        &-info {
+            position: relative;
+        }
     }
 }
 
@@ -281,6 +298,7 @@ ul > li, ol > li {
         position: absolute;
         left: 0;
         top: 60%;
+        z-index: 10;
     }
 }
 
@@ -341,8 +359,29 @@ ul > li, ol > li {
 }
 
 
-.block.filter{
-    & .title{
-        padding:0;
+.filter-options-content {
+    & .items {
+        flex-direction: column;
+        align-items: start;
     }
+}
+
+.sorter-options {
+    .fonts-1();
+}
+
+.toolbar-products {
+    padding: 0;
+    text-align: start;
+}
+
+.limiter-options {
+    .fonts-1();
+}
+
+.product-items {
+    & li::after{
+        display: none;
+    }
+
 }
