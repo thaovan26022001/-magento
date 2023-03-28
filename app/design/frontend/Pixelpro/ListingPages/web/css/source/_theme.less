@@ -151,35 +151,7 @@ ul > li, ol > li {
     margin-right: 20px;
 }
 
-.options .items,
-.items {
-    display: flex;
 
-    & li{
-        &::after {
-            display: inline-block;
-            text-decoration: none;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            font-size: 24px;
-            line-height: 16px;
-            color: inherit;
-            content: '\e608';
-            font-family: 'icons-blank-theme';
-            vertical-align: middle;
-            font-weight: normal;
-            overflow: hidden;
-            speak: none;
-            text-align: center;
-        }
-
-        &:last-child {
-            &::after {
-                display: none;
-            }
-        }
-    }
-}
 
 
 .widget .block-title > strong {
@@ -218,7 +190,22 @@ ul > li, ol > li {
 
     &-collapsible {
         &-nav{
-            top: 30px;
+            & .title.block-collapsible-nav-title{
+                & strong{
+                    padding-left: 17px;
+                }
+                &::after {
+                    top: 10px;
+                }
+            }
+
+            & .content.block-collapsible-nav-content.active {
+                & .nav.items {
+                    & .nav.item{
+                        padding-left: 14px;
+                    }
+                }
+            }
         }
     }
 
@@ -319,6 +306,9 @@ ul > li, ol > li {
     display: block;
 }
 
+.product-info-main .box-tocart .input-text.qty {
+    height: 40px;
+}
 
 //
 .privacy-policy-content {
@@ -368,10 +358,15 @@ ul > li, ol > li {
             max-width: 100%;
         }
 
-        & .action.subscribe {
-            background-color: @noti-color;
-        }
+
     }
+}
+
+.main__subscribe-block {
+    & .action.subscribe {
+        background-color: @noti-color;
+    }
+
 }
 
 .footer__subscribe{
@@ -438,9 +433,7 @@ ul > li, ol > li {
 
 .breadcrumbs {
     padding: 0 32px;
-    & .items {
-        margin-bottom: 20px;
-    }
+
 }
 
 .fotorama-item .fotorama__wrap {
@@ -458,4 +451,17 @@ ul > li, ol > li {
             display: flex;
         }
     }
+}
+
+
+.column.main {
+    & .block.block-dashboard-addresses {
+        & .block-content{
+            padding-top: 42px;
+        }
+    }
+}
+
+.form-address-edit .actions-toolbar .action.primary {
+    padding: 0 17px;
 }

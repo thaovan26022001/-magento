@@ -228,11 +228,11 @@
             justify-content: center;
             height: 100%;
             display: flex;
+            width: 70%;
             
         }
 
         &__infor {
-            max-width: 466px;  
             &-title {
                 .fonts-7();
             } 
@@ -408,8 +408,6 @@
         }
     }
 
-
-
     .topic {
         position: relative;
 
@@ -442,6 +440,7 @@
             order: 1;
         }    
     }
+
     .paragraph {
         padding-top: 80px;
         &__content {
@@ -564,6 +563,53 @@
 
     .prev, .next {
         top: 50%;
+    }
+
+    .options .items,
+    .items {
+        & li{
+            &::after {
+                display: inline-block;
+                text-decoration: none;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-size: 24px;
+                line-height: 16px;
+                color: inherit;
+                content: '\e608';
+                font-family: 'icons-blank-theme';
+                vertical-align: middle;
+                font-weight: normal;
+                overflow: hidden;
+                speak: none;
+                text-align: center;
+            }
+    
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .block.block-collapsible-nav {
+        & .content.block-collapsible-nav-content {
+            & ul {
+                & li::after {
+                    display: none;
+                    
+                }
+            }
+        }
+    }
+
+    .fieldset {
+        & .legend{
+            & span {
+                .fonts-10 ()
+            }
+        }
     }
   
 
