@@ -6,19 +6,20 @@
  */
  -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
 <body>
 
 
     <move element="header.panel.wrapper" destination="header-wrapper" after="-"/>
-    <referenceContainer name="header-wrapper" htmlClass="header__content"/>
     <move element="header__links" destination="header-wrapper" after="-"/>
     <move element="header__search" destination="header-wrapper" after="-"/>
-    <move element="footer-head" destination="footer-container" before="footer__subscribe"/>
     <referenceBlock name="copyright" remove="true"/>
+    <referenceContainer name="footer-container" htmlClass="footer"></referenceContainer>
     <referenceBlock name="report.bugs" remove="true"/>
-    <move element="form.subscribe" destination="footer__subscribe" after="-"/>
-    <move element="footer" destination="footer-container" after="-"/>
     <referenceBlock name="footer_links" remove="true"/>
+    <move element="footer-head" destination="footer-container" before="-"/>
+    <move element="footer__subscribe" destination="footer-container" before="-"/>
+    <move element="footer__sponsor" destination="footer-container" after="footer__subscribe"/>
     <move element="footer-bottom" destination="footer-container" after="-"/>
 
     
@@ -28,7 +29,10 @@
     <container name="header__search" htmlClass="header__search" htmlTag="div">
         <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::header_search.phtml"></block>
     </container>
-<referenceContainer name="footer-container" htmlClass="footer">
+
+<!--FOOTER-->
+
+
     <container name="footer-head" as="footerHead" label="footer head" htmlTag="div" htmlClass="footer__heading" >
         <block class="Magento\Framework\View\Element\Template" name="footer-heading" template="Magento_Theme::footer_head.phtml" ></block>
     </container>
@@ -42,6 +46,7 @@
         <block class="Magento\Framework\View\Element\Template" name="footer-sponsor" template="Magento_Theme::footerSponsor.phtml" ></block>
     </container>
 
+
    <referenceContainer name="footer" htmlClass="row footer__contact p-32">
         <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-2">
             <arguments>
@@ -52,7 +57,7 @@
                       <argument name="label" xsi:type="string" translate="true">
                            Orders and Returns                     
                       </argument>
-                      <argument name="path" xsi:type="string">http://192.168.31.206/sales/guest/form/</argument>
+                      <argument name="path" xsi:type="string">http://192.168.31.226/sales/guest/form/</argument>
                   </arguments>
             </block>
             
@@ -61,7 +66,7 @@
                       <argument name="label" xsi:type="string" translate="true">
                            Guides , Education                      
                       </argument>
-                      <argument name="path" xsi:type="string">http://192.168.31.206/guides-education</argument>
+                      <argument name="path" xsi:type="string">http://192.168.31.226/guides-education</argument>
                   </arguments>
             </block>
         </block>
@@ -74,7 +79,7 @@
                       <argument name="label" xsi:type="string" translate="true">
                            About Us                      
                       </argument>
-                      <argument name="path" xsi:type="string">http://192.168.31.206/about-us</argument>
+                      <argument name="path" xsi:type="string">http://192.168.31.226/about-us</argument>
                   </arguments>
             </block>
 
@@ -84,7 +89,7 @@
                       <argument name="label" xsi:type="string" translate="true">
                            Payment                      
                       </argument>
-                      <argument name="path" xsi:type="string">http://192.168.31.206/pay</argument>
+                      <argument name="path" xsi:type="string">http://192.168.31.226/pay</argument>
                   </arguments>
             </block>
         </block>
@@ -99,7 +104,7 @@
                       <argument name="label" xsi:type="string" translate="true">
                            Benefits                    
                       </argument>
-                      <argument name="path" xsi:type="string">http://192.168.31.206/benefits</argument>
+                      <argument name="path" xsi:type="string">http://192.168.31.226/benefits</argument>
                   </arguments>
             </block>
             
@@ -108,7 +113,7 @@
                       <argument name="label" xsi:type="string" translate="true">
                            Contact Us                      
                       </argument>
-                      <argument name="path" xsi:type="string">http://192.168.31.206/contact/</argument>
+                      <argument name="path" xsi:type="string">http://192.168.31.226/contact/</argument>
                   </arguments>
             </block>
         </block>
@@ -127,14 +132,10 @@
             <block class="Magento\Framework\View\Element\Template" name="footer-logo" template="Magento_Theme::footer-logo.phtml" ></block>  
         </block>
    </referenceContainer>
-</referenceContainer>
 
     <container name="footer-bottom" as="footerBottom" label="footer bottom" htmlTag="div" htmlClass="footer__bottom p-32" >
         <block class="Magento\Framework\View\Element\Template" name="footer-finish" template="Magento_Theme::footer-bottom.phtml" ></block>
     </container>
-
-
-
-     
 </body>
 </page>
+

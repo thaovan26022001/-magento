@@ -2,31 +2,25 @@
 @import '_base.less';
 @import '_grids.less';
 
+
 .article {
+    padding: 32px 32px 0 32px;
     &__container {
         padding-bottom: 20px;
     }
 
-    padding-top: 32px;
-    &__img {
+    &__img{
         position: relative;
-        & svg {
-           
+        & svg{
             position: absolute;
-
             top: 12px;
             right: 12px;
-        
-         
-
             &:last-child {                    
                 top: 95%;
                 left: 0;
             }
         }
-        
     }
-
     &__infor {
         &-title {
             .fonts-12();
@@ -76,12 +70,13 @@
         }
     }
 
-  
 }
 
 .container {
+    padding: 0 32px;
     &-nav {
-
+        padding-right: 32px;
+        padding-left: 32px;
 
         &-second {
             margin-bottom: 24px;
@@ -90,15 +85,18 @@
             margin-top: 0;
         }
     }
+
     &__title {
         padding-bottom: 20px;
     }
 
+
     &__list {
         display: flex;
-        padding: 16px 0;
+        padding: 0 16px;
+
         &-item {
-        
+            flex: 1;
             height: 44px;
             text-align: center;
             border-bottom: 1px solid @border-color;
@@ -109,13 +107,13 @@
 
         &-link {
             .fonts-1();
-            color: @black-color-text;           
+            color: @black-color-text;
             line-height: 44px;
         }
     }
 
     &__border {
-
+        border: 1px solid @gray-line-color;
         border-radius: 2px;
         margin-right: 4px;
     }
@@ -182,6 +180,7 @@
     }
 
     &__shop {
+        padding: 0 32px;
 
         position: relative;
         margin-bottom: 80px;
@@ -258,6 +257,7 @@
 }
 
 .banner {
+    margin: 0 -32px;
     background-color: @black-color-text;
 
     
@@ -287,6 +287,8 @@
 
 .rings {
     position: relative;
+    padding-right: 32px;
+    padding-left: 32px;
 
 
     &__rectangle{
@@ -302,7 +304,9 @@
         }           
     }
  
-    &__text {     
+    &__text {    
+        padding-left: 32px;
+        padding-right: 32px; 
         &-view {
             padding-top: 38px;
             display: flex;
@@ -344,12 +348,15 @@
     }
 
     &__content {
+        
         & h2 {
             padding-bottom: 16px;
         }
     }
 
     &__video {
+        padding-right: 32px;
+        padding-left: 32px;
 
        
         &-img {
@@ -401,6 +408,8 @@
 
 
 .best__seller {
+    padding-right: 32px;
+    padding-left: 32px;
 
 
     & h2 {
@@ -423,8 +432,9 @@
 }
 
 .topic{
+    padding: 0 32px;
     background-color: @background-color;
-    padding:0 32px;
+
     &__content {
 
         &-list {
@@ -479,6 +489,8 @@
 }
 
 .paragraph {
+    padding-right: 32px;
+    padding-left: 32px;
     position: relative;
 
     margin-bottom: 25px;
@@ -498,7 +510,8 @@
 
 //title
 .title {
-
+    padding-right: 32px;
+    padding-left: 32px;
     &__img {
         display: flex;       
         position: relative;
@@ -529,7 +542,8 @@
     }
 
     &__bottom {
-
+        padding-right: 32px;
+        padding-left: 32px;
         &-img {
 
             &-picture {
@@ -555,7 +569,8 @@
 
 //benefits
 .benefits {
-
+    padding-right: 32px;
+    padding-left: 32px;
     & h2 {
         padding-bottom: 66px;
     }
@@ -585,6 +600,7 @@
 //main-subscribe
 .main {
     &__subscribe {
+        margin: 0 -32px;
         background-color: @black-color;
         position: relative;
     
@@ -682,6 +698,7 @@
         row-gap: 24px;
         
         &-block {
+            order: -1;
             padding-top: 57px;
             row-gap: 24px;
         }
@@ -867,6 +884,35 @@
          }
     }
 
+}
+
+.payment{
+    padding: 0 32px;
+    &-list {
+        border: 1px solid @gray-line-color;
+        & li{
+            &:first-child{
+                border-right: 1px solid @gray-line-color;
+            }
+
+            &:last-child{
+                margin-bottom: 18px;
+            }
+            
+
+        }
+
+    }
+
+    &-title {
+        margin: 18px 0 13px 0;
+    }
+
+    &-img {
+        text-align: center;
+        padding: 12px 0;
+
+    }
 }
 
 

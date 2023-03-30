@@ -78,7 +78,7 @@ ul > li, ol > li {
 .page {
     &-main {
         max-width: 100%;
-        padding: 0 32px;
+        padding: 0 ;
         margin: 0;
         & .account {
             padding-top: 90px;
@@ -90,18 +90,13 @@ ul > li, ol > li {
         overflow: hidden;
     }
 
-    &-title {
-        &-wrapper {
-            display: none;
-
-        }
-
-    }
 
     &-header {
         & .panel.wrapper {
             border: none;
         }
+        
+        border: none;
     }
 
     &-with-filter {
@@ -330,6 +325,8 @@ ul > li, ol > li {
         }
 
         &.block-products-list.grid {
+            padding-right: 32px;
+            padding-left: 32px;
             & .block-content {
                 & .products-grid.grid {
                     & .product-items.widget-product-grid{
@@ -340,6 +337,18 @@ ul > li, ol > li {
                 }
             }
 
+        }
+    }
+
+    &-content  {
+        & form {
+            & .actions-toolbar {
+                & .primary{
+                    & button{
+                        padding: 0 17px;
+                    }
+                }
+            }
         }
     }
 }
@@ -458,7 +467,7 @@ ul > li, ol > li {
 }
 
 .header {
-    &__content {
+    &.content {
         height: 58px;
         .display-flex();
         align-items: center;
@@ -480,6 +489,7 @@ ul > li, ol > li {
 }
 
 .footer{
+    padding-top: 64px;
     &.content {
         padding-left: 32px;
         padding-right: 32px;
@@ -570,10 +580,13 @@ ul > li, ol > li {
 
 
 .breadcrumbs {
-    padding: 0 32px;
+    padding: 32px;
     & .items {
         display: flex;
+        flex-wrap: wrap;
         & li{
+            display: flex;
+            align-items: center;
             &::after {
                 display: inline-block;
                 text-decoration: none;
@@ -614,6 +627,9 @@ ul > li, ol > li {
     background: @white-color;
 }
 
+.columns .column.main {
+    padding-bottom: 0;
+}
 
 .column.main {
     & .block.block-dashboard-addresses {
@@ -623,6 +639,7 @@ ul > li, ol > li {
     }
 }
 
+.checkout-payment-method .payment-method-content > .actions-toolbar > .primary .action.primary,
 .methods-shipping .actions-toolbar .action.primary,
 .cart-container .checkout-methods-items .action.primary,
 .block-minicart .block-content > .actions > .primary .action.primary,
@@ -630,8 +647,101 @@ ul > li, ol > li {
     padding: 0 17px;
 }
 
+.opc {
+    &-progress{
+        &-bar{
+            padding: 30px 0;
+        }
+    }
+
+    &-wrapper {
+        & .step-title{
+            padding-bottom: 24px;
+        }
+    }
+
+    &-estimated {
+        &-wrapper {
+            & .minicart-wrapper{
+                & .action.showcart {
+                    background-color: @header-color;
+                    height: 48px;
+                }
+            }
+
+        }
+    }
+
+    &-block-shipping-information{
+        & .shipping-information-title .action-edit{
+            top: -3px;
+
+        }
+    }
+}
+
+.authentication{
+    &-wrapper {
+        margin-top: -47px;
+
+        & .action-auth-toggle {
+            color: @black-color-text;
+    
+        }
+    }
+}
+
+
+
+.checkout-success {
+    padding-top: 20px;
+    & .actions-toolbar {
+        padding-top: 20px
+    }
+}
+
+.cart-empty {
+    padding: 20px 0;
+}
+
+.payment{
+    &-group {
+        & .payment-method._active{
+            & .payment-method-content{
+                & .actions-toolbar{
+                    padding: 0 17px
+                }
+            }
+        }
+    }
+}
+
+.checkout{
+    &-container {
+        & .opc-estimated-wrapper{
+            & .minicart-wrapper{
+                .action.showcart {
+                    .counter.qty {
+                        left: 34px;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+.review-form .action.submit.primary {
+    background: @black-color-text;
+    color: @white-color;
+    &:hover{
+        background: @noti-color;
+        color: @white-color;
+
+    }
+}
 @import '_colors.less';
-@import '_responsive.less';
 @import '_breadcrumbs.less';
 @import '_buttons.less';
 @import '_fonts.less';
