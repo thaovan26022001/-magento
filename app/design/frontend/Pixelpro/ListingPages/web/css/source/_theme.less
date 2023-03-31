@@ -116,6 +116,17 @@ ul > li, ol > li {
         width: 100%;
     }
 
+    &-title {
+        &-wrapper {
+            & .page-title{
+                & .base {
+                    display:none;
+                }
+            }
+
+        }
+    }
+
 }
 
 .pages {
@@ -741,6 +752,12 @@ ul > li, ol > li {
 
     }
 }
+.search.found {
+    .fonts-1();
+    padding-bottom: 20px;
+}
+
+
 @import '_colors.less';
 @import '_breadcrumbs.less';
 @import '_buttons.less';
