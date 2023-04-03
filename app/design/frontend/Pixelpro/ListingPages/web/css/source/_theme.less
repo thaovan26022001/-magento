@@ -175,6 +175,15 @@ ul > li, ol > li {
 .swatch-attribute.size .swatch-option{
     height: 28px;
 }
+
+.swatch{
+    &-select {
+        &.size,
+        &.precious_stones {
+            .fonts-1();
+        }
+    }
+}
 .navigation .level0 > .level-top {
     padding: 0 0 0 20px;
     display: flex;
@@ -231,6 +240,10 @@ ul > li, ol > li {
 // BLOCK
 
 .block {
+    &.block-dashboard-info {
+        margin-top: 30px;
+
+    }
 
     &-new {
         &-products {
@@ -285,6 +298,7 @@ ul > li, ol > li {
     }
 
     &-collapsible {
+        top: 0;
         &-nav{
             & .title.block-collapsible-nav-title{
                 & strong{
@@ -378,7 +392,7 @@ ul > li, ol > li {
 
 .product {
     &-items {
-        display: flex;
+
 
         & li::after{
             display: none;
@@ -436,25 +450,42 @@ ul > li, ol > li {
         .fonts-1();
     }
 
-    &-info-main{
-        & .box-tocart {
-            & .action.tocart{
-                padding-top: 5px;
-                color: @white-color;
-                background-color: @black-color-text;
-                &:hover{
-                    background-color: @noti-color;
+    &-info{
+        &-main{
+            & .box-tocart {
+                & .action.tocart{
+                    padding-top: 5px;
+                    color: @white-color;
+                    background-color: @black-color-text;
+                    &:hover{
+                        background-color: @noti-color;
+                    }
+                }
+    
+                & .input-text.qty{
+                    height: 40px;
                 }
             }
 
-            & .input-text.qty{
-                height: 40px;
+            & .action.towishlist{
+                margin-right: 20px;
+
+            }
+    
+        }
+
+        &-stock {
+            &-sku {
+                & .stock.available{
+                    color: @listing-text-color;
+                }
             }
         }
 
     }
 
 }
+
 
 
 
@@ -579,9 +610,19 @@ ul > li, ol > li {
     .fonts-1();
 }
 
-.toolbar-products {
-    padding: 0;
-    text-align: start;
+.toolbar{
+    &-products {
+        padding: 0;
+        text-align: start;
+    }
+
+    &.wishlist-toolbar{
+        & .pager{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
 }
 
 .limiter-options {
@@ -625,17 +666,34 @@ ul > li, ol > li {
 }
 
 
-.fotorama-item .fotorama__wrap {
-    .fotorama__stage {
-        .fotorama__stage__shaft.fotorama__grab {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+.fotorama{
+    &-item {
+        & .fotorama__wrap{
+            & .fotorama__stage {
 
-        }}
-}
+                .fotorama__stage__shaft.fotorama__grab {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+        
+                }
 
-.fotorama__thumb {
-    background: @white-color;
+            }
+        }
+    }
+    &__thumb {
+        background: @white-color;
+    }
+
+    &--fullscreen {
+        background-color: rgba(0, 0,0, 0.4);
+        &  .fotorama__wrap{
+            min-width: 0px;
+            max-width: 1200px !important;
+            margin: auto;
+            background: @white-color;
+            
+        }
+    }
 }
 
 .columns .column.main {
@@ -756,6 +814,51 @@ ul > li, ol > li {
     .fonts-1();
     padding-bottom: 20px;
 }
+
+.table{
+    &-wrapper {
+        &.orders-history{
+            & .data.table.table-order-items.history{
+                & thead{
+                    & tr {
+                        & th {
+                            .fonts-10();
+                        }
+
+                    }
+                }
+
+            }
+
+        }
+
+    }
+}
+
+
+.cart{
+    &-container{
+        padding-top: 20px;
+    }
+
+    &-summary {
+        & .block > .title::after{
+            top: 8px;
+        }
+    }
+
+    &.table-wrapper{
+        & .actions-toolbar > .action{
+            margin-top: 12px;
+        }
+    }
+}
+
+.box-content{
+    padding: 12px 0;
+}
+
+
 
 
 @import '_colors.less';
