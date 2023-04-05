@@ -569,8 +569,7 @@
 
 //benefits
 .benefits {
-    padding-right: 32px;
-    padding-left: 32px;
+
     & h2 {
         padding-bottom: 66px;
     }
@@ -594,7 +593,75 @@
     &-col {      
         margin-bottom: 36px;
     }
+    &__menu {
+        &-list {
+            background-color: @header-color;
+            padding: 18px 0;
+
+        }
+
+        &-item {
+            margin-bottom: 10px;
+            padding: 7px 20px;
+
+            & a, 
+            & p{
+                &:hover{
+                    color: @noti-color;
+                }
+            }
+
+        }
+    }
+
+    &__content {
+        &-list {
+
+        }
+        &-item {
+            &--title {
+                .fonts-10();
+                    padding: 10px 0;
+                    border-bottom: 1px solid @border-color;
+                    margin: 20px 0;
+                    
+                &:hover{
+                    color: @noti-color;
+                }
+            }
+
+            &--child{
+
+                & a{
+                    color: @noti-color;
+                }
+                & p{
+                    margin: 14px 0;
+                }
+
+
+            }
+
+
+
+            &--body {
+                &-title {
+                    color: @listing-text-color;
+
+                }
+            }
+        }
+    }
+
+    &__sevice {
+        & h2 {
+            border-bottom: 1px solid @black-color-text;
+            padding-bottom: 30px;
+            margin-bottom: 60px;
+        }
+    }
 }
+
 
 
 //main-subscribe

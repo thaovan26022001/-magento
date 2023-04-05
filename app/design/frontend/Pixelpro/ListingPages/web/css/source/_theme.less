@@ -116,11 +116,15 @@ ul > li, ol > li {
 .page {
     &-main {
         max-width: 100%;
-        padding: 0 ;
+        padding: 0 32px ;
         margin: 0;
         & .account {
             padding-top: 90px;
 
+        }
+
+        & .main__subscribe{
+            margin: -32px !important;
         }
     }
 
@@ -298,10 +302,6 @@ ul > li, ol > li {
 // BLOCK
 
 .block {
-    &.block-dashboard-info {
-        margin-top: 30px;
-
-    }
 
     &-new {
         &-products {
@@ -434,6 +434,34 @@ ul > li, ol > li {
             }
         }
     }
+
+    &.block-dashboard-info {
+        margin-top: 30px;
+
+        &.block-dashboard-info {
+            & .block-content {
+                & .action.edit,
+                & .action.change-password {
+                    &:hover{
+                        color: @noti-color;
+                    }
+                }
+            }
+    
+        }
+    
+        &.block-dashboard-addresses{
+            & .block-content {
+                & .action.edit,
+                & .action.change-password {
+                    &:hover{
+                        color: @noti-color;
+                    }
+                }
+            }
+        }
+
+    }
 }
 
 //
@@ -452,14 +480,12 @@ ul > li, ol > li {
         & .products.list.items.product-items{
             display: flex;
             flex-wrap: wrap;
-            margin-right: -10px;
-            margin-left: -10px;
+            margin: 0 -10px;
 
             & .item.product.product-item {
                 flex: 0 0 100%;
                 max-width: 100%;
-                padding-left: 10px;
-                padding-right: 10px;
+                padding: 0 10px;
 
                 & .product-item-info{
                     width: 100%;
@@ -487,8 +513,6 @@ ul > li, ol > li {
 
 .product {
     &-items {
-
-
         & li::after{
             display: none;
         }
@@ -638,8 +662,7 @@ ul > li, ol > li {
 .footer{
     padding-top: 64px;
     &.content {
-        padding-left: 32px;
-        padding-right: 32px;
+        padding: 0 32px;
     }
 
     &__subscribe{
@@ -775,7 +798,6 @@ ul > li, ol > li {
     &-item {
         & .fotorama__wrap{
             & .fotorama__stage {
-
                 .fotorama__stage__shaft.fotorama__grab {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
@@ -963,7 +985,40 @@ ul > li, ol > li {
     padding: 12px 0;
 }
 
+.cms-privacy-policy-cookie-restriction-mode.cms-page-view.page-layout-1column{
+    & .page-wrapper{
 
+        & .breadcrumbs{
+            display: none;
+        }
+
+    }
+
+    & .block-collapsible-nav{
+        top: 57px
+    }
+
+    & .privacy-policy.cms-content {
+        margin-top: 80px;
+        
+        & .title.block-collapsible-nav-title {
+            .fonts-3();
+            padding: 10px 32px;
+
+        }
+    }
+}
+
+.cms-customer-service.cms-page-view.page-layout-1column{
+    .cms-content-important {
+        & a {
+            .fonts-8();
+            color: @listing-text-color
+    
+        }
+    }
+
+}
 
 
 @import '_colors.less';
