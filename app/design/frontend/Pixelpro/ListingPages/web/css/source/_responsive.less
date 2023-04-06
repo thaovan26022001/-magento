@@ -11,6 +11,10 @@
             padding: 0 12px;
             border-bottom: 1px solid @border-color;
         }
+
+        &__links {
+            padding-right: 68px;
+        }
     }
 
 
@@ -43,6 +47,13 @@
                 padding-bottom: 60px;
                 
             }
+        }
+    }
+
+    .header {
+        &__links {
+            padding: 8px 10px 0 10px;
+        
         }
     }
 
@@ -117,7 +128,6 @@
         }
 
         &.filter{
-    
             & .block-content.filter-content {
                 & .filter-options {
                     & .filter-options-content{
@@ -149,12 +159,9 @@
         }
     }
     
-    .header.content {
-        padding: 0 32px;
-    }
 
     .minicart-wrapper {
-        order: 1;
+
         text-align: center;
         margin-left: 0;
     }
@@ -222,6 +229,7 @@
                 row-gap: 16px;
             }
         }
+
         &__contact {
             &-help {
                 &:last-child {
@@ -236,12 +244,136 @@
                 }
             }
         }
+
     }
-    
 
 
     .products-list .product-item-photo {
         padding: 0;
+    }
+
+
+    .header {
+        &.panel {
+            & > .header.links {
+                & > .link.wishlist {
+                    display: none;
+
+                }
+            }
+        }
+    }
+
+    .page {
+        &-header {
+            padding: 0 32px;
+        }
+    }
+
+    .panel {
+        &.wrapper {
+            & div {
+                padding-right: 24px;
+            }
+        }
+    
+    }
+
+    .sections {
+        &.nav-sections{
+            border-bottom: 1px solid @border-color;
+
+        }
+    }
+    .nav-sections-items:before, .nav-sections-items:after {
+        content: '';
+        display: table;
+    }
+    .nav-sections-items:after {
+        clear: both;
+    }
+    .navigation {
+        & ul{
+            position: relative;
+            width: 100%;
+        }
+        & .level0{
+            position: static;
+            & .submenu {
+                left: 0 !important;
+                border: none;
+                min-height: 370px;
+
+                padding: 0 32px;
+                & li {
+                    position: static !important;
+                    & .level1.submenu{
+                        position: static !important;
+                        display: block !important;
+                        border: none;
+                        box-shadow: none;
+                    }
+                }
+                & .level1.parent {
+                    & a span{
+                        &:nth-child(2) {
+                            .fonts-3();
+                        }
+
+                        &:hover {
+                            .fonts-3();
+                        }
+
+                    }
+                }
+                & a {
+                    padding: 8px 0;
+                    &:hover{
+                        background: @white-color;
+                    }
+
+                }
+            }
+        }
+
+        & .level1{
+
+            &.category-item {
+                float: left;
+                width: 16.66667%;
+            }
+
+            & .submenu {
+                padding: 0;
+            }
+
+        }
+  
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-open .nav-sections{
+        box-shadow: 0 0 5px 0 rgba(50, 50, 50, 0.75);
+        left: 0;
+        z-index: 99;
+        
+    }
+
+    .nav-sections {
+        -webkit-overflow-scrolling: touch;
+        -webkit-transition: left 0.3s;
+        -moz-transition: left 0.3s;
+        -ms-transition: left 0.3s;
+        transition: left 0.3s;
+        height: 100%;
+        left: calc(-1 * (100% - 54px));
+        overflow: auto;
+        position: fixed;
+        top: 0;
+        width: calc(100% - 20px);
     }
 
 
@@ -250,12 +382,15 @@
 @media only screen and (min-width: (@screen__l )) {
     .header {
         &.content {
-            display: grid;
-            grid-template-columns: 4fr 4fr 0.5fr 0.5fr 0.5fr;
+
         }
 
         &__links , &__search {
             text-align: center;
+        }
+        
+        &__links {
+            padding-top: 0;
         }
 
         &.panel > .header.links > li:nth-child(2) {
@@ -583,9 +718,9 @@
         }
 
         &__bottom {
-            margin: 0 0 30px 0;
             .display-flex();
             align-items: center;
+            margin: 0 0 30px 0;
 
 
             &-list {
@@ -658,13 +793,14 @@
             }
         }
 
+
     }
 
     .breadcrumbs {
         padding: 0 32px;
     }
 
-
+    
 
     .fieldset {
         & .legend{
@@ -678,7 +814,7 @@
         &-wrapper {
             & .action.showcart {
                 & .counter.qty {
-                    left: 52px
+                    left: 20px
     
                 }
             }
@@ -711,5 +847,12 @@
     
     }
 
+
+
 }
+
+
+
+
+
 
