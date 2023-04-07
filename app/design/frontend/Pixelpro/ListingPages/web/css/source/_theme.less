@@ -177,7 +177,7 @@ ul > li, ol > li {
 
 
     &-header {
-        border: none;
+
         & .panel.wrapper {
             border: none;
         }
@@ -601,6 +601,17 @@ ul > li, ol > li {
 
             & .actions-secondary > .action.tocompare {
                 display: block;
+
+
+                &::before {
+                    background-position: top center;
+                    background-repeat: no-repeat;
+                    width: 24px;
+                    height: 24px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    background-image: url('@{baseDir}images/diamond.png');   
+                }
             }
         }
 
@@ -694,12 +705,12 @@ ul > li, ol > li {
 //HEADER
 .header {
     &.content {
-        height: 58px;
         .display-flex();
         align-items: center;
         position: relative;
         max-width: 100%;
-        padding: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
 
         
         &::before , &::after {
@@ -1071,8 +1082,6 @@ ul > li, ol > li {
         }
     }
 }
-
-
 
 .box-content{
     padding: 12px 0;
