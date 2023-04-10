@@ -32,7 +32,7 @@
     <container name="header__search" htmlClass="header__search" htmlTag="div">
         <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::header_search.phtml"></block>
     </container>
-        <container name="account_menu" htmlClass="header links hide-on-mobi show-on-pc" htmlTag="div">
+        <container name="account_menu" htmlClass="header links show-on-tablet hide-on-mobi show-on-pc" htmlTag="div">
         <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::account_menu.phtml"></block>
     </container>
 

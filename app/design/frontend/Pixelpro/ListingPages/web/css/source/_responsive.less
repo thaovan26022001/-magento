@@ -12,9 +12,6 @@
             border-bottom: 1px solid @border-color;
         }
 
-        &__links {
-            padding-right: 68px;
-        }
     }
 
 
@@ -58,6 +55,37 @@
     }
 
 
+
+}
+
+
+@media only screen and (max-width: (@screen__xxs )) {
+
+    .header {
+        &__links {
+            padding: 8px 0 0 0;
+        }
+    }
+
+    .minicart{
+        &-wrapper{
+            margin-left: 0;
+        }
+    }
+
+}
+
+@media (min-width: (@screen__s)) and (max-width: (@screen__m)){
+
+    .nav-toggle {
+        margin: 0;
+    }
+    .header {
+        &__links {
+            padding-right: 40px;
+            padding-left: 24px;
+        }
+    }
 
 }
 
@@ -176,10 +204,19 @@
     }
     
 
-    .minicart-wrapper {
+    .minicart{
+        &-wrapper {
+            text-align: center;
+            margin-left: 0;
 
-        text-align: center;
-        margin-left: 0;
+            & .action.showcart {
+                & .counter.qty {
+                    left: 19px;
+    
+                }
+            }
+        }
+
     }
 
     .level-top .ui-menu-item-wrapper {
@@ -276,17 +313,31 @@
     }
 
     .panel {
-        &.wrapper {
-            & div {
-                padding-right: 24px;
-            }
+        &.wrapper{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            text-align: center;
         }
-    
+    }
+
+    .sections {
+        &.nav-sections{
+            border-bottom: 1px solid @border-color;
+
+        }
     }
 
 
-
-
+    .minicart{
+        &-wrapper {
+            & .block-minicart {
+                &::after,
+                &::before {
+                    right: 32px;
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: (@screen__m)) and (max-width: (@screen__l )){
@@ -460,6 +511,10 @@
         }
     }
 
+    .actions-toolbar .secondary {
+        float: none;
+    }
+
 } 
 
 @media only screen and (min-width: (@screen__l )) {
@@ -496,8 +551,11 @@
                         &:nth-child(3){
                             width: 40%;
                             & ul {
-                                float: left;
-                                width: 50%;
+                                & li {
+                                    float: left;
+                                    width: 50%;
+
+                                }
                             
                             }
                         }
@@ -551,6 +609,7 @@
             &.submenu {
                 box-shadow: 0 5px 5px rgba(0, 0, 0, 0.09);
             }
+
             &.nav-9 {
                 & .level0.submenu {
                     & ul {
@@ -643,23 +702,247 @@
                                 background-image: url('@{baseDir}images/icon-stone-6_11zon.jpg');   
                             }
                         }
+
+                        & .nav-9-2-7 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-stone-7.jpg');   
+                            }
+                        }
                                                 
-                        & .nav-9-4-1 {
+
+                        & .nav-9-3-1 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-1_11zon.jpg');   
+                            }
+                        }
+
+                        & .nav-9-3-2 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-3_11zon.jpg');   
+                            }
+                        }
+
+                        & .nav-9-3-3{
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-5_11zon.jpg');   
+                            }
+                        }
+
+                        & .nav-9-3-4{
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-7_11zon.jpg');   
+                            }
+                        }
+
+                        & .nav-9-3-5 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-9_11zon.jpg');   
+                            }
+                        }
+                        
+                        & .nav-9-3-6 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-11_11zon.jpg');   
+                            }
+                        }
+                                                
+                        & .nav-9-3-7 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-13_11zon.jpg');   
+                            }
+                        }
+                                                
+                        & .nav-9-3-8 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-16_11zon.jpg');   
+                            }
+                        }
+                                                
+                        & .nav-9-3-9 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-14_11zon.jpg');   
+                            }
+                        }
+
+                        & .nav-9-3-10 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-2_11zon.jpg');   
+                            }
+                        }
+                                                
+                        & .nav-9-3-11 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-4_11zon.jpg');   
+                            }
+                        }
+
+                        & .nav-9-3-12 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-6_11zon.jpg');   
+                            }
+                        }
+
+                        & .nav-9-3-13 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-8_11zon.jpg');   
+                            }
+                        }
+
+                        & .nav-9-3-14 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-10_11zon.jpg');   
+                            }
+                        }
+
+                        & .nav-9-3-15 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-12_11zon.jpg');   
+                            }
+                        }
+
+                        & .nav-9-3-16 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-15_11zon.jpg');   
+                            }
+                        }
+                        
+                        & .nav-9-3-17 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-17_11zon.jpg');   
+                            }
+                        }
+                                                
+                        & .nav-9-3-18 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-semi-19_11zon.jpg');   
+                            }
+                        }
+
+
+                        & .nav-9-5-1 {
                             & a::before{
                                 background-image: url('@{baseDir}images/icon-pearl-1_11zon.jpg');   
                             }
                         }
-                                                
-                        & .nav-9-4-2 {
+                        
+                        & .nav-9-5-2 {
                             & a::before{
                                 background-image: url('@{baseDir}images/icon-pearl-2_11zon.jpg');   
                             }
                         }
                                                 
-                        & .nav-9-4-3 {
+                        & .nav-9-5-3 {
                             & a::before{
                                 background-image: url('@{baseDir}images/icon-pearl-3_11zon.jpg');   
                             }
+                        }
+
+                        & .nav-9-6-1 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-swa-1_11zon.jpg');   
+                            }
+                        }
+                        
+                        & .nav-9-6-2 {
+                            & a::before{
+                                background-image: url('@{baseDir}images/icon-swa-2_11zon.jpg');   
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.parent {
+                &:hover {
+                    &::before{
+                        cursor: pointer;
+                        content: "";
+                        position: absolute;
+                        left: 24px;
+                        top: 21px;
+                        z-index: 10;
+                        border-width: 18px 26px;
+                        border-style: solid;
+                        width: 0;
+                        border-color: transparent transparent @border-color transparent;
+                        
+                    }
+
+                    &::after{
+                        border: 6px solid;
+                        border-color: transparent transparent @white-color transparent;
+                        z-index: 9999;
+                        content: '';
+                        top: 22px;
+                        border-width: 18px 26px;
+                        display: block;
+                        height: 0;
+                        position: absolute;
+                        border-style: solid;
+                        left: 24px ;
+                        width: 0;
+                    }
+                }
+
+                &:nth-child(2){
+                    &:hover {
+                        &::before,
+                        &::after {
+                            left: 8%;
+                        }
+                    }
+                }
+
+                &:nth-child(3){
+                    &:hover {
+                        &::before,
+                        &::after {
+                            left: 16%;
+                        }
+                    }
+                }
+
+                &:nth-child(4){
+                    &:hover {
+                        &::before,
+                        &::after {
+                            left: 23%;
+                        }
+                    }
+                }
+                
+                &:nth-child(5){
+                    &:hover {
+                        &::before,
+                        &::after {
+                            left: 32%;
+                        }
+                    }
+                }
+
+                &:nth-child(6){
+                    &:hover {
+                        &::before,
+                        &::after {
+                            left: 40%;
+                        }
+                    }
+                }
+
+                &:nth-child(7){
+                    &:hover {
+                        &::before,
+                        &::after {
+                            left: 46%;
+                        }
+                    }
+                }
+
+                &:last-child{
+                    &:hover {
+                        &::before,
+                        &::after {
+                            left: 61%;
                         }
                     }
                 }
@@ -687,8 +970,6 @@
             display: none;
         }
     }
-
-
 
     .article{
         &_container {
@@ -1093,7 +1374,6 @@
         padding: 0 32px;
     }
 
-    
 
     .fieldset {
         & .legend{
@@ -1111,6 +1391,7 @@
     
                 }
             }
+
         }
     
     }
@@ -1140,6 +1421,11 @@
     
     }
 
+    .panel {
+        &.wrapper{
+            grid-column-gap: 30px;
+        }
+    }
 
 
 }

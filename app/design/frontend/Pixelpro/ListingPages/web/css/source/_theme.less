@@ -38,7 +38,7 @@ ul > li, ol > li {
                 top: 8px;
                 color: white;
                 border-radius: 55%;
-                left: 19px;
+                left: 8px;
                 width: 15px;
                 height: 20px;
                 line-height: 20px
@@ -206,6 +206,7 @@ ul > li, ol > li {
 
     &-title {
         &-wrapper {
+            display: none;
             & .page-title{
                 & .base {
                     display:none;
@@ -319,6 +320,20 @@ ul > li, ol > li {
     & .level0.parent > .level-top > .ui-menu-icon{
         display: none;
     }
+
+    & .level0 .submenu .active > a,
+    & .level0.has-active > .level-top {
+        border-color: @black-color-text;
+    }
+
+    & .level0 .submenu .active > a{
+        border-width: 0 0 0 2px;
+    }
+
+    & .level0.has-active > .level-top {
+        border-width: 0 0  2px;
+    }
+
 }
 
 
@@ -413,6 +428,7 @@ ul > li, ol > li {
     &-collapsible {
         &-nav{
             top: 0;
+
             & .title.block-collapsible-nav-title{
                 & strong{
                     padding-left: 17px;
@@ -429,6 +445,7 @@ ul > li, ol > li {
                     }
                 }
             }
+
         }
     }
 
@@ -490,32 +507,19 @@ ul > li, ol > li {
 
     &.block-dashboard-info {
         margin-top: 30px;
-        &.block-dashboard-info {
-            & .block-content {
-                & .action.edit,
-                & .action.change-password {
-                    &:hover{
-                        color: @noti-color;
-                    }
-                }
-            }
-    
-        }
-    
-        &.block-dashboard-addresses{
-            & .block-content {
-                & .action.edit,
-                & .action.change-password {
-                    &:hover{
-                        color: @noti-color;
-                    }
-                }
-            }
-        }
 
     }
 }
 
+
+.box-actions {
+    & .action.edit,
+    & .action.change-password {
+        &:hover{
+            color: @noti-color;
+        }
+    }
+}
 //
 
 //PRODUCT
@@ -590,6 +594,7 @@ ul > li, ol > li {
                     right: 10px;
                     z-index: 10;          
                 }
+
             }
 
             & a:last-child::before {
@@ -599,20 +604,6 @@ ul > li, ol > li {
                 z-index: 10;
             }
 
-            & .actions-secondary > .action.tocompare {
-                display: block;
-
-
-                &::before {
-                    background-position: top center;
-                    background-repeat: no-repeat;
-                    width: 24px;
-                    height: 24px;
-                    display: inline-block;
-                    vertical-align: middle;
-                    background-image: url('@{baseDir}images/diamond.png');   
-                }
-            }
         }
 
         &-name > a:hover {
@@ -844,6 +835,15 @@ ul > li, ol > li {
             justify-content: space-between;
         }
     }
+
+    &-amount {
+        display: none;
+    }
+
+    &.toolbar-products {
+        display: flex;
+        justify-content: flex-end
+    }
 }
 
 .limiter-options {
@@ -916,17 +916,22 @@ ul > li, ol > li {
 }
 
 
-.columns .column.main {
-    padding-bottom: 0;
-}
+.columns{
 
-.column.main {
-    & .block.block-dashboard-addresses {
-        & .block-content{
-            padding-top: 42px;
+    & .column.main {
+        padding-bottom: 0;
+    }
+
+    &.main{
+        & .block.block-dashboard-addresses  {
+            & .block-content{
+                padding-top: 42px;
+            }
         }
     }
-}
+
+} 
+
 
 .checkout-payment-method .payment-method-content > .actions-toolbar > .primary .action.primary,
 .methods-shipping .actions-toolbar .action.primary,
@@ -1123,6 +1128,36 @@ ul > li, ol > li {
 
 
 }
+
+
+.category-ring-navbar {
+
+    & .article{
+        margin-bottom: 60px
+    }
+
+}
+
+.login-container {
+    & .block .block-title{
+        margin-top: 20px
+    }
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @import '_colors.less';
