@@ -55,7 +55,6 @@
         &-item {
             text-transform: uppercase;
             cursor: pointer;
-            .display-flex();
             align-items: center;
             
             height: 56px;
@@ -67,7 +66,7 @@
             }
 
             & a{
-                display: flex;
+                .display-flex();
                 align-items: center;
                 line-height: 56px;
             }
@@ -708,6 +707,7 @@
         display: flex;
         justify-content: center;
         align-items: flex-end; 
+        display: none;
     
         &-btn {
             background-color: @white-color;
