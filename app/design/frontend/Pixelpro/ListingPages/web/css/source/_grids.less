@@ -11,6 +11,7 @@
 .grid {
     width: 100%;
     display: block;
+
 }
 
 .row {
@@ -28,11 +29,21 @@
 
 .row-flex {
     display: flex;
+
+
 }
 
 .col {
     padding-left: 4px;
     padding-right: 4px;
+}
+.c-0{
+    display: none;
+}
+
+.c-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
 }
 
 .c-3 {
@@ -44,18 +55,51 @@
     max-width: 33.33333%;
 }
 
+
 .c-6 {
     flex: 0 0 50%;
     max-width: 50%;
 }
 
+.c-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+}
+
+.c-9-2{
+    flex: 0 0 70.3327%;
+    max-width: 70.3327%;
+}
+
+.c-2-2{
+    flex: 0 0 29.6673%;
+    max-width: 29.6673%;
+}
+
+.c-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+
+.c-10 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+}
 .c-12 {
     flex: 0 0 100%;
     max-width: 100%;
+    
+}
+
+.overflow-x {
+    overflow-x: scroll;
 }
 
 @media only screen and (min-width: (@screen__l )){
-    
+    .overflow-x {
+        overflow-x: none;
+    }
     .p-l-80 {
         padding-left: 80px;
     }
@@ -76,16 +120,21 @@
         padding-left: 10px;
        
     }
-
+    .l-9-2{
+        flex: 0 0 70.3327%;
+        max-width: 70.3327%;
+    }
 
     .l-2 {
         flex: 0 0 16.66667%;
         max-width: 16.66667%;
+        display: block;
     }
 
     .l-3 {
         flex: 0 0 25%;
         max-width: 25%;
+        display: block;
     }
 
     .l-4 {
@@ -113,25 +162,65 @@
         max-width: 20%;
     }
 
+    .l-2-2{
+        flex: 0 0 29.6673%;
+        max-width: 29.6673%;
+    }
+    .l-10 {
+        flex: 0 0 83.33333%;
+        max-width: 83.33333%;
+    }
+
 
 }
 
 @media (min-width: (@screen__m)) and (max-width: (@screen__l )){
+    .m-9-2{
+        flex: 0 0 70.3327%;
+        max-width: 70.3327%;
+    }
 
+    .m-2 {
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+        display: block;
+    }
+
+    .m-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+        display: block;
+    }
 
     .m-4 {
         flex: 0 0 33.33333%;
         max-width: 33.33333%;
     }
-
+    .m-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
     .m-5 {
         flex: 0 0 41.66667%;
         max-width: 41.66667%;
     }
 
+    .m-8 {
+        flex: 0 0 66.66667%;
+        max-width: 66.66667%;
+    }
+    .m-10 {
+        flex: 0 0 83.33333%;
+        max-width: 83.33333%;
+    }
     .m-12 {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+
+    .m-2-2{
+        flex: 0 0 29.6673%;
+        max-width: 29.6673%;
     }
 
 }

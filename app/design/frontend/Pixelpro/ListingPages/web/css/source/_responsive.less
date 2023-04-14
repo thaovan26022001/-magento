@@ -333,6 +333,39 @@
             }
         }
     }
+
+    .categorypath-ring-navbar{
+        .container{
+            &__list {
+                &-item{
+                    &:last-child{
+                        border-bottom: 1px solid @border-color;
+
+                    }
+
+                    &:first-child{
+                        border-bottom: 1px solid @noti-color;
+                    }
+                }
+            }
+        }
+
+
+        & .rings {
+            &__content{
+                padding-left: 73px;
+            }
+        }
+
+        & .banner {
+            &__desc {
+                &-content {
+                    padding-left: 74px;
+                }
+            }
+        }
+    }
+
 }
 
 @media (min-width: (@screen__m)) and (max-width: (@screen__l )){
@@ -508,6 +541,36 @@
 
     .actions-toolbar .secondary {
         float: none;
+    }
+
+    .categorypath-ring-navbar{
+        & .container {
+            &__product{
+                &-link {
+    
+                    & h3 {
+                        width: 100%;
+                        padding: 14px 0;
+                        margin: 0
+                    }
+                }
+            }
+
+        }
+
+        & .rings {
+            &__content{
+                padding-left: 73px;
+            }
+        }
+
+        & .banner {
+            &__desc {
+                &-content {
+                    padding-left: 74px;
+                }
+            }
+        }
     }
 
 } 
@@ -1423,6 +1486,59 @@
         }
     }
 
+    .categorypath-ring-navbar{
+        & .container{
+            &__product{
+                &-link {
+                    & h3 {
+                        padding: 30px 35px;
+                        &:hover {
+                            color: @noti-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .banner{
+
+            &__desc{
+                &-content{
+                    margin-left: 0;
+                    padding-left: 220px;
+                    padding-right: 18%;
+                    width: 100%;
+                }
+
+            }
+        }
+
+        & .metal {
+            &__layout {
+                padding-left: 295px;
+                padding-right: 60px;
+                justify-content: center;
+                
+            }
+        }
+
+        & .rings{
+            &__video{
+                &-left {
+
+                }
+            }
+        }
+
+        & .main {
+            &__img {
+                margin-top: 50px;
+                & h3{
+                    margin-top: 24px;
+                }
+            }
+        }
+    }
 
 }
 

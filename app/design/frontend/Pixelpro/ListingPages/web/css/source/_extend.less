@@ -986,14 +986,126 @@
     }
 }
 
+.categorypath-ring-navbar{
+    & .product-items.widget-product-grid{
+        flex-wrap: nowrap;
+        & li{
+            margin-left: 0
+        }
+    }
+
+    & .container {
+        &__product{
+            &-link {
+                display: block;
+
+                & h3 {
+                    width: 100%;
+                    padding: 14px 0;
+                    margin: 0
+                }
+            }
+        }
+
+        &__border{
+            border: none;
+            margin-right: 0;
+            padding-bottom: 8px;
+            &:hover {
+                border: none
+            }
+        }
+    }
+
+    & .title{
+        &-item {
+            font-size: 14px;
+        }
+    }
+
+    & .metal{
+        & li {
+            padding: 10px 0;
+            border-top: 1px solid @border-color;
+            &:last-child{
+                border-bottom:  1px solid @border-color;
+            }
+        }
+        &__img {
+            padding-top: 27px;
+            & img{
+                height: 100%;
+            }
+        }
+    }
+
+    & .rings{
+        &__video{
+            &-left{
+                order: 1;
+            }
+            
+        }
+
+    }
 
 
+    & .banner {
+        margin: 0 0 64px 0;
+
+        &__desc{
+            &-btn {
+                height: 48px;
+                width: 150px;
+                &:hover {
+                    background-color: @white-color;
+                    color: @noti-color
+                }
+            }
+        }
+
+        &__content{
+            margin-top: 64px;
+        }
+    }
+
+    & .main {
+
+        &__img{
+            & p{
+                margin-top: 16px;
+
+            }
+        }
+        &__infor {
+
+            &-layout{
+                border-top: 1px solid #9b9b9b;
+                margin: 0 20px;
+                padding: 28px 30px 60px 30px;
+            }
+            &-title{
+                .fonts-17();
+                margin-bottom: 19px;
+                margin-top: 14px;
+            }
+
+            & strong {
+                font-size: 14px;
+
+            }
+            & p{
+                line-height: 20px;
+                margin-bottom: 14px
+            }
+        }
+    }
+}
 
 
 
 @import '_colors.less';
-@import '_responsive.less';
 @import '_breadcrumbs.less';
 @import '_buttons.less';
 @import '_fonts.less';
-@import '_theme.less';
+@import '_responsive.less';
