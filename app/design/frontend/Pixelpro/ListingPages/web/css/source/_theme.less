@@ -15,11 +15,13 @@ ul > li, ol > li {
     order:-1;
     margin-left: -12px;
     margin-right: 16px;
+    z-index: 1;
 
 }
 
 .logo {
     margin: 0;
+    z-index: 1;
 }
 
 //MINICART
@@ -53,7 +55,7 @@ ul > li, ol > li {
                 height: 24px;
                 display: inline-block;
                 vertical-align: middle;
-                background-image: url('@{baseDir}images/icon-sprites-new-design.svg');          
+                background: url('@{baseDir}images/cart.png');          
           
             }
 
@@ -65,7 +67,7 @@ ul > li, ol > li {
                 height: 24px;
                 display: inline-block;
                 vertical-align: middle;
-                background-image: url('@{baseDir}images/icon-sprites-new-design.svg');          
+                background: url('@{baseDir}images/cart.png');          
 
             }
 
@@ -187,11 +189,7 @@ ul > li, ol > li {
         
     }
 
-    &-with-filter {
-        & .columns .sidebar-main {
-            order: 1;
-        }
-    }
+
 
     &-products {
         & .products-grid .product-items {
@@ -342,6 +340,10 @@ ul > li, ol > li {
         border-width: 0 0  2px;
     }
 
+    & .level0 .submenu .active > a{
+        border: none;
+    }
+
 }
 
 
@@ -407,18 +409,32 @@ ul > li, ol > li {
                     }
                 }
 
-                & .filter-options-content{
-                        
-                }
+
                     
             }
 
-            & .swatch-attribute.swatch-layered.color {
-                & .swatch-attribute-options.clearfix {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr 1fr;
-                }
+        }
+
+        &.active {
+            position: fixed;
+            background-color: #FFF;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin-bottom: 0;
+            overflow-y: scroll;
+            padding: 17px 32px 0 32px;
+
+            & .filter-content{
+                display: block;
             }
+        }
+
+
+        & .filter-title strong{
+            font-weight: 500;
         }
     }
 
@@ -792,24 +808,43 @@ ul > li, ol > li {
 
 
 //FILTER
-.filter{
-    &-options-content {
-        & .items {
-            flex-direction: column;
-            align-items: start;
-            & .item {
-                & a{
-                    padding-bottom: 12px;
-                    &:hover {
-                        color: @noti-color;
+.filter {
+    &-options{
+        &-content {
+            & .items {
+                padding: 20px 0;
+                flex-direction: column;
+                align-items: start;
+                & .item {
+                    margin-left: 26px;
+                    & a{
+                        padding-bottom: 12px;
+                        &:hover {
+                            color: @noti-color;
+                        }
+        
                     }
+                }
     
+                & .count {
+                    display:none;
                 }
             }
-            & .count {
-                display:none;
-            }
         }
+
+        & .filter-options-title {
+            margin: 0;
+        }
+
+        &-title {
+            cursor: pointer;
+        }
+
+        &-item {
+            padding: 15px 0;
+            border-bottom: 1px solid @border-color;
+        }
+
     }
     &-current .filter-label{
         padding-bottom: 12px;
@@ -823,12 +858,11 @@ ul > li, ol > li {
                         display: none;
                     }
                     &::after {
-                        background-position: -53px -587px;
                         background-repeat: no-repeat;
-                        width: 10px;
-                        height: 10px;
+                        width: 22px;
+                        height: 16px;
                         vertical-align: middle;
-                        background-image: url('@{baseDir}images/icon-sprites-new-design.svg');
+                        background: url('@{baseDir}images/close.png');
                         color: #414042;
                         display: inline-block;
                         font-size: 0;
@@ -837,7 +871,6 @@ ul > li, ol > li {
                         text-align: center;
                         left: 60%;
                         top: 90%;
-                        transform: translate(0, -50%);
                         -webkit-transform: translate(0, -50%);
                         content: " ";
                     }
@@ -845,6 +878,10 @@ ul > li, ol > li {
                 }
             }
         }
+    }
+
+    &-content {
+        display: none;
     }
 
 }
@@ -879,10 +916,14 @@ ul > li, ol > li {
         display: none;
     }
 
-    &.toolbar-products {
-        display: flex;
-        justify-content: flex-end
+    &-sorter{
+        position: absolute;
+        top: -14px;
+        right: 0;
+        z-index: 10;
     }
+
+
 }
 
 .limiter-options {
@@ -1179,33 +1220,33 @@ ul > li, ol > li {
 
 #option-label-color-93-item{
     &-58{
-        background-image: url('@{baseDir}images/white_11zon.jpg')  !important;
+        background: url('@{baseDir}images/white_11zon.jpg')  !important;
     }
 
     &-59 {
-        background-image: url('@{baseDir}images/yellow_11zon.jpg')  !important;
+        background: url('@{baseDir}images/yellow_11zon.jpg')  !important;
 
     }
 
     &-60 {
-        background-image: url('@{baseDir}images/red_11zon.jpg')  !important;
+        background: url('@{baseDir}images/red_11zon.jpg')  !important;
 
     }
 
     &-260{
-        background-image: url('@{baseDir}images/white_yellow_11zon.jpg')  !important;
+        background: url('@{baseDir}images/white_yellow_11zon.jpg')  !important;
     }
 
     &-261{
-        background-image: url('@{baseDir}images/yellow_white_11zon.jpg')  !important;
+        background: url('@{baseDir}images/yellow_white_11zon.jpg')  !important;
     }
 
     &-262{
-        background-image: url('@{baseDir}images/red_white_11zon.jpg')  !important;
+        background: url('@{baseDir}images/red_white_11zon.jpg')  !important;
     }
 
     &-263{
-        background-image: url('@{baseDir}images/white_red_11zon.jpg')  !important;
+        background: url('@{baseDir}images/white_red_11zon.jpg')  !important;
     }
 
 }
@@ -1221,6 +1262,67 @@ ul > li, ol > li {
 
 
 
+.page {
+    &-product{
+        &-configurable{
+
+            & .minicart{
+                &-wrapper {          
+                    & .action.showcart {
+            
+                        &::before {
+
+                            background: url('@{baseDir}../images/cart.png');          
+                      
+                        }
+            
+                        &.active::before {
+
+                            background: url('@{baseDir}../images/cart.png');          
+                      
+            
+                        }
+            
+            
+                    }
+                }
+            }
+
+            & #option-label-color-93-item{
+                &-58{
+                    background: url('@{baseDir}../images/white_11zon.jpg')  !important;
+                }
+            
+                &-59 {
+                    background: url('@{baseDir}../images/yellow_11zon.jpg')  !important;
+            
+                }
+            
+                &-60 {
+                    background: url('@{baseDir}../images/red_11zon.jpg')  !important;
+            
+                }
+            
+                &-260{
+                    background: url('@{baseDir}../images/white_yellow_11zon.jpg')  !important;
+                }
+            
+                &-261{
+                    background: url('@{baseDir}../images/yellow_white_11zon.jpg')  !important;
+                }
+            
+                &-262{
+                    background: url('@{baseDir}../images/red_white_11zon.jpg')  !important;
+                }
+            
+                &-263{
+                    background: url('@{baseDir}../images/white_red_11zon.jpg')  !important;
+                }
+            
+            }
+        }
+    }
+}
 
 
 

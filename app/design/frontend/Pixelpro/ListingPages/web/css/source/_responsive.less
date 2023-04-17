@@ -1,18 +1,13 @@
 
 @screen__s: 420px;
+
+@screen__ms: 520px;
 @media only screen and (max-width: (@screen__m )) {
     .page-header {
         margin-bottom: 0;
     
     }
 
-    .header {
-        &.content {
-
-            border-bottom: 1px solid @border-color;
-        }
-
-    }
 
 
     .navigation {
@@ -28,6 +23,9 @@
 
     .overflow-x{
         overflow-x: scroll;
+    }
+    .product-item-actions .actions-secondary > .action.tocompare{
+        display: block;
     }
 
 
@@ -54,10 +52,7 @@
         }
     }
 
-
-
 }
-
 
 @media only screen and (max-width: (@screen__xxs )) {
 
@@ -87,6 +82,26 @@
         }
     }
 
+
+
+}
+
+@media (max-width: (@screen__ms)){
+    .page-products .products-grid .product-item{
+
+    }
+
+    .page{
+        &-products {
+            & .products-grid{
+                & .product-item{
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: (@screen__m)) {
@@ -120,7 +135,7 @@
             }
         }
 
-        &.content{
+        &.content {
             padding: 10px 0;
         }
     }
@@ -184,12 +199,6 @@
                         
                 }
     
-                & .swatch-attribute.swatch-layered.color {
-                    & .swatch-attribute-options.clearfix {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr 1fr 1fr;
-                    }
-                }
             }
         }
 
@@ -197,7 +206,7 @@
             display: none;
         }
     }
-    
+
 
     .minicart{
         &-wrapper {
@@ -315,6 +324,7 @@
         }
     }
 
+
     .sections {
         &.nav-sections{
             border-bottom: 1px solid @border-color;
@@ -340,7 +350,6 @@
                 &-item{
                     &:last-child{
                         border-bottom: 1px solid @border-color;
-
                     }
 
                     &:first-child{
@@ -349,7 +358,6 @@
                 }
             }
         }
-
 
         & .rings {
             &__content{
@@ -365,10 +373,72 @@
             }
         }
     }
+    .page {
+        &-product{
+            &-configurable{
+    
+                & .minicart{
+                    &-wrapper {          
+                        & .action.showcart {
+                
+                            &::before {
+    
+                                background: url('@{baseDir}images/cart.png');          
+                          
+                            }
+                
+                            &.active::before {
+    
+                                background: url('@{baseDir}images/cart.png');          
+                          
+                
+                            }
+                
+                
+                        }
+                    }
+                }
+    
+                & #option-label-color-93-item{
+                    &-58{
+                        background: url('@{baseDir}images/white_11zon.jpg')  !important;
+                    }
+                
+                    &-59 {
+                        background: url('@{baseDir}images/yellow_11zon.jpg')  !important;
+                
+                    }
+                
+                    &-60 {
+                        background: url('@{baseDir}images/red_11zon.jpg')  !important;
+                
+                    }
+                
+                    &-260{
+                        background: url('@{baseDir}images/white_yellow_11zon.jpg')  !important;
+                    }
+                
+                    &-261{
+                        background: url('@{baseDir}images/yellow_white_11zon.jpg')  !important;
+                    }
+                
+                    &-262{
+                        background: url('@{baseDir}images/red_white_11zon.jpg')  !important;
+                    }
+                
+                    &-263{
+                        background: url('@{baseDir}images/white_red_11zon.jpg')  !important;
+                    }
+                
+                }
+            }
+        }
+    }
 
 }
 
 @media (min-width: (@screen__m)) and (max-width: (@screen__l )){
+
     .page {
         &-header{
             border-bottom: 1px solid @border-color;
@@ -468,7 +538,6 @@
             display: flex;
             flex-direction: column;
             background-color: @white-color;
-
         }
 
         & li{
@@ -498,6 +567,8 @@
                 }
             }
 
+
+
             & .level1{
                 padding-top: 14px;
                 padding-bottom: 16px;
@@ -506,12 +577,11 @@
                     padding-bottom: 0;
                     border-bottom: none;
                     padding-top: 0;
-                    & .level1.submenu {
+                    & .level1.submenu{
                         display: block !important;
                         position: static !important;
                         border: none;
                         box-shadow: none;
-
                         & li {
                             padding-top: 14px;
                             padding-bottom: 16px;
@@ -519,9 +589,7 @@
 
                         }
                     }
-
                 }
-
 
             }
 
@@ -558,21 +626,8 @@
 
         }
 
-        & .rings {
-            &__content{
-                padding-left: 73px;
-            }
-        }
 
-        & .banner {
-            &__desc {
-                &-content {
-                    padding-left: 74px;
-                }
-            }
-        }
     }
-
 } 
 
 @media only screen and (min-width: (@screen__l )) {
@@ -594,7 +649,6 @@
         }
         
     }
-
     .navigation {
         & ul{
             position: relative;
@@ -614,7 +668,6 @@
                                     width: 50%;
 
                                 }
-                            
                             }
                         }
                     }
@@ -624,12 +677,14 @@
 
         & .level0{
             position: static;
+
             & .submenu {
                 top: 52px !important;
-                z-index: 999;
                 left: 0 !important;
+                z-index: 999;
                 border: none;
                 min-height: 370px;
+                border-top: 1px solid @border-color;
                 padding: 20px 32px 0 32px;
 
                 & li {
@@ -641,6 +696,7 @@
                         box-shadow: none;
                     }
                 }
+
                 & .level1.parent {
                     & a span{
                         &:nth-child(2) {
@@ -661,11 +717,11 @@
                     }
 
                 }
-                
             }
 
             &.submenu {
                 box-shadow: 0 5px 5px rgba(0, 0, 0, 0.09);
+                
             }
 
             &.nav-9 {
@@ -685,227 +741,214 @@
 
                         & .nav-9-1-1 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-diamond-1_11zon.jpg');   
-                            }
-                        }
-
-                        & .nav-9-1-1 {
-                            & a::before{
-                                background-image: url('@{baseDir}images/icon-diamond-1_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-diamond-1_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-1-2 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-diamon-2_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-diamon-2_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-1-3 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-diamon-3_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-diamon-3_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-1-4 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-diamond-4.jpg');   
+                                background: url('@{baseDir}images/icon-diamond-4.jpg');   
                             }
                         }
 
                         & .nav-9-1-5 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-diamond-5_11zon.jpg');   
-                            }
-                        }
-
-                        & .nav-9-1-6 {
-                            & a::before{
-                                background-image: url('@{baseDir}images/icon-diamond-6_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-diamond-5_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-2-1 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-stone-1.jpg');   
+                                background: url('@{baseDir}images/icon-stone-1.jpg');   
                             }
                         }
                         
                         & .nav-9-2-2 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-stone-2_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-stone-2_11zon.jpg');   
                             }
                         }
                                                 
                         & .nav-9-2-3 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-stone-3_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-stone-3_11zon.jpg');   
                             }
                         }
                                                 
                         & .nav-9-2-4 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-stone-4_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-stone-4_11zon.jpg');   
                             }
                         }
                                                 
                         & .nav-9-2-5 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-stone-5_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-stone-5_11zon.jpg');   
                             }
                         }
                                                 
                         & .nav-9-2-6 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-stone-6_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-stone-6_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-2-7 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-stone-7.jpg');   
+                                background: url('@{baseDir}images/icon-stone-7.jpg');   
                             }
                         }
-                                                
 
                         & .nav-9-3-1 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-1_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-1_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-3-2 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-3_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-3_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-3-3{
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-5_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-5_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-3-4{
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-7_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-7_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-3-5 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-9_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-9_11zon.jpg');   
                             }
                         }
                         
                         & .nav-9-3-6 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-11_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-11_11zon.jpg');   
                             }
                         }
                                                 
                         & .nav-9-3-7 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-13_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-13_11zon.jpg');   
                             }
                         }
                                                 
                         & .nav-9-3-8 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-16_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-16_11zon.jpg');   
                             }
                         }
                                                 
                         & .nav-9-3-9 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-14_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-14_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-3-10 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-2_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-2_11zon.jpg');   
                             }
                         }
                                                 
                         & .nav-9-3-11 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-4_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-4_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-3-12 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-6_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-6_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-3-13 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-8_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-8_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-3-14 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-10_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-10_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-3-15 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-12_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-12_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-3-16 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-15_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-15_11zon.jpg');   
                             }
                         }
                         
                         & .nav-9-3-17 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-17_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-17_11zon.jpg');   
                             }
                         }
                                                 
                         & .nav-9-3-18 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-semi-19_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-semi-19_11zon.jpg');   
                             }
                         }
 
-
                         & .nav-9-5-1 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-pearl-1_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-pearl-1_11zon.jpg');   
                             }
                         }
                         
                         & .nav-9-5-2 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-pearl-2_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-pearl-2_11zon.jpg');   
                             }
                         }
                                                 
                         & .nav-9-5-3 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-pearl-3_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-pearl-3_11zon.jpg');   
                             }
                         }
 
                         & .nav-9-6-1 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-swa-1_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-swa-1_11zon.jpg');   
                             }
                         }
                         
                         & .nav-9-6-2 {
                             & a::before{
-                                background-image: url('@{baseDir}images/icon-swa-2_11zon.jpg');   
+                                background: url('@{baseDir}images/icon-swa-2_11zon.jpg');   
                             }
                         }
+
                     }
                 }
             }
@@ -968,7 +1011,7 @@
                         }
                     }
                 }
-                
+
                 &:nth-child(5){
                     &:hover {
                         &::before,
@@ -1005,8 +1048,9 @@
                     }
                 }
             }
-        }
 
+
+        }
 
         & .level1{
 
@@ -1018,9 +1062,13 @@
             & .submenu {
                 padding: 0;
             }
-
         }
-  
+
+        & .level2 {
+            & span{
+                padding-left: 9px;
+            }
+        }
     }
 
     .nav {
@@ -1279,7 +1327,6 @@
     }
 
     .cover__white {
-        
         & span {
             padding-top: 20px;
         }
@@ -1373,7 +1420,6 @@
         top: 50%;
     }
 
-
     .block {
 
         &.filter{
@@ -1390,12 +1436,6 @@
                     }
                 }
     
-                & .swatch-attribute.swatch-layered.color {
-                    & .swatch-attribute-options.clearfix {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr 1fr 1fr;
-                    }
-                }
             }
         }
 
@@ -1428,11 +1468,15 @@
 
     }
 
-
     .breadcrumbs {
         padding: 0 32px;
     }
 
+    .filter{
+        &-content {
+            display: block;
+        }
+    }
 
     .fieldset {
         & .legend{
@@ -1442,6 +1486,7 @@
         }
     }
 
+    .minicart-wrapper .block-minicart::before
     .minicart{
         &-wrapper {
             & .action.showcart {
@@ -1450,6 +1495,7 @@
     
                 }
             }
+
 
         }
     
@@ -1492,6 +1538,7 @@
                 &-link {
                     & h3 {
                         padding: 30px 35px;
+
                         &:hover {
                             color: @noti-color;
                         }
@@ -1541,6 +1588,7 @@
     }
 
 }
+
 
 
 

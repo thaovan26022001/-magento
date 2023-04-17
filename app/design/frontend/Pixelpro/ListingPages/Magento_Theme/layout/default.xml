@@ -13,6 +13,8 @@
     <move element="header.panel.wrapper" destination="header-wrapper" after="-"/>
     <move element="header__links" destination="header-wrapper" after="-"/>
     <move element="header__search" destination="header-wrapper" after="-"/>
+    <referenceBlock name="div.sidebar.additional" remove="true"/>
+
     <referenceBlock name="copyright" remove="true"/>
     <referenceContainer name="footer-container" htmlClass="footer"></referenceContainer>
     <referenceBlock name="report.bugs" remove="true"/>
