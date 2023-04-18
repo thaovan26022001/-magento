@@ -379,7 +379,6 @@ ul > li, ol > li {
     .fonts-4();
 }
 
-
 // BLOCK
 
 .block {
@@ -415,6 +414,12 @@ ul > li, ol > li {
 
         }
 
+        & .filter-title {
+            & strong{
+                font-size: 14px;
+            }
+        }
+
         &.active {
             position: fixed;
             background-color: #FFF;
@@ -430,6 +435,20 @@ ul > li, ol > li {
             & .filter-content{
                 display: block;
             }
+
+            & strong{
+                color: @black-color-text;
+                background-color: @white-color;
+                padding: 0;
+                border: none;
+                font-size: 18px;
+
+                &::before{
+                    display:none;
+                }
+            }
+
+
         }
 
 
@@ -527,6 +546,12 @@ ul > li, ol > li {
     &.block-dashboard-info {
         margin-top: 30px;
 
+    }
+
+    &-subtitle {
+        &.filter-current-subtitle{
+            display: none;
+        }
     }
 }
 
@@ -812,6 +837,7 @@ ul > li, ol > li {
     &-options{
         &-content {
             & .items {
+                background-color: @background-color;
                 padding: 20px 0;
                 flex-direction: column;
                 align-items: start;
@@ -838,6 +864,27 @@ ul > li, ol > li {
 
         &-title {
             cursor: pointer;
+            &::after{
+                background-repeat: no-repeat;
+                width: 22px;
+                height: 16px;
+                vertical-align: middle;
+                background: url('@{baseDir}images/cong.png');
+                color: #414042;
+                display: inline-block;
+                font-size: 0;
+                text-align: center;
+                transform: translate(0, -50%);
+                content: " ";
+                float: right;
+            
+            }
+
+            &.active{
+                &::after{
+                    background: url('@{baseDir}images/tru.png');
+                }
+            }
         }
 
         &-item {
@@ -884,6 +931,40 @@ ul > li, ol > li {
         display: none;
     }
 
+    &-title {
+
+        & strong {
+            background-color: @black-color-text;
+            border: 1px solid @black-color-text;
+            border-radius: 2px;
+            padding: 7px 8px;
+            color: @white-color;
+            &::before{
+                background-repeat: no-repeat;
+                width: 22px;
+                height: 16px;
+                vertical-align: middle;
+                background: url('@{baseDir}images/icon-filter.png');
+                color: #414042;
+                display: inline-block;
+                font-size: 0;
+                margin-top: 10px;
+                text-align: center;
+                left: 60%;
+                top: 90%;
+                transform: translate(0, -50%);
+    
+                content: " ";
+            }
+
+        }
+    }
+
+    &-value {
+        background-color: @background-color;
+        padding: 5px 40px;
+    }
+
 }
 
 .field.qty {
@@ -912,13 +993,10 @@ ul > li, ol > li {
         }
     }
 
-    &-amount {
-        display: none;
-    }
 
     &-sorter{
         position: absolute;
-        top: -14px;
+        top: -8px;
         right: 0;
         z-index: 10;
     }
@@ -1323,7 +1401,6 @@ ul > li, ol > li {
         }
     }
 }
-
 
 
 

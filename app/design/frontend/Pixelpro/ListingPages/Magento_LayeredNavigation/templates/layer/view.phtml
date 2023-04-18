@@ -29,7 +29,8 @@
     }'>
         <?php $filtered = count($block->getLayer()->getState()->getFilters()) ?>
         <div class="block-title filter-title" data-count="<?= /* @noEscape */ $filtered ?>">
-            <strong data-role="title"><?= $block->escapeHtml(__('Filter')); ?></strong>
+            <strong data-role="title"><?= $block->escapeHtml(__('Filters')); ?></strong>
+
         </div>
         <div class="block-content filter-content">
             <?= $block->getChildHtml('state') ?>
@@ -45,7 +46,7 @@
             <?php foreach ($block->getFilters() as $filter) : ?>
                 <?php if ($filter->getItemsCount()) : ?>
                     <?php if (!$wrapOptions) : ?>
-                        <!--<strong role="heading" aria-level="2" class="block-subtitle filter-subtitle"><?= $block->escapeHtml(__('Filter')) ?></strong>-->
+                        <!--<strong role="heading" aria-level="2" class="block-subtitle filter-subtitle"><?= $block->escapeHtml(__('Filters')) ?></strong>-->
                         <div class="filter-options" id="narrow-by-list" data-role="content" data-mage-init='
                         {
                             "accordion":
