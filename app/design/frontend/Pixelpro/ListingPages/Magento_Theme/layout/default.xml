@@ -19,6 +19,9 @@
     <referenceContainer name="footer-container" htmlClass="footer"></referenceContainer>
     <referenceBlock name="report.bugs" remove="true"/>
     <referenceBlock name="footer_links" remove="true"/>
+    <move element="page.main.title" destination="product.info.price" before="-"/>
+    <move element="product.info.review" destination="product.info.main" after="product.info.price"/>
+    <move element="product.info.options.wrapper.bottom" destination="product.info.social" after="-"/>
     <move element="footer-head" destination="footer-container" before="-"/>
     <move element="footer__subscribe" destination="footer-container" before="-"/>
     <move element="footer__sponsor" destination="footer-container" after="footer__subscribe"/>
