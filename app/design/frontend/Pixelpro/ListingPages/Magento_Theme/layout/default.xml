@@ -14,7 +14,7 @@
     <move element="header__links" destination="header-wrapper" after="-"/>
     <move element="header__search" destination="header-wrapper" after="-"/>
     <referenceBlock name="div.sidebar.additional" remove="true"/>
-
+    <referenceBlock name="page.messages" remove="true"/>
     <referenceBlock name="copyright" remove="true"/>
     <referenceContainer name="footer-container" htmlClass="footer"></referenceContainer>
     <referenceBlock name="report.bugs" remove="true"/>
@@ -29,7 +29,7 @@
     <move element="header__search" destination="header.panel.wrapper" before="-"/>
     <move element="header__links" destination="header.panel.wrapper" before="-"/>
     <move element="minicart" destination="header.panel.wrapper" before="-"/>
-    <move element="account_menu" destination="header.panel.wrapper" after="header__search"/>
+
 
     <container name="header__links" htmlClass="header__links" htmlTag="div">
         <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::header_like.phtml"></block>
@@ -37,9 +37,7 @@
     <container name="header__search" htmlClass="header__search" htmlTag="div">
         <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::header_search.phtml"></block>
     </container>
-        <container name="account_menu" htmlClass="header links show-on-tablet hide-on-mobi show-on-pc" htmlTag="div">
-        <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::account_menu.phtml"></block>
-    </container>
+
 
 
 <!--FOOTER-->
