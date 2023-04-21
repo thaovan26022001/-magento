@@ -1,10 +1,12 @@
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 <body>
 
-<move element="header__he" destination="product.info.main" after="product.info.social"/>
+<move element="product.benefits" destination="main.content" after="-"/>
+<move element="product.info.details" destination="product.info.main" after="-"/>
 
-<container name="header__he" htmlClass="header__he" htmlTag="div">
-    <block class="Magento\Framework\View\Element\Template" template="Magento_Catalog::he.phtml"></block>
+<container name="product.benefits" htmlClass="product__benefits" htmlTag="div">
+    <block class="Magento\Framework\View\Element\Template" template="Magento_Catalog::product__benefits.phtml"></block>
 </container>
+
 </body>
 </page>
