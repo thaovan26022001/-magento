@@ -1352,15 +1352,49 @@ ul > li, ol > li {
                         }
                     }
                 }
+
+                &.options{
+                    display: block;
+
+                    & .item-options{
+                        margin-top: 20px;
+                    }
+                }
             }
-            .modal{
+
+            & .modal{
                 &-custom{
-                    &.action-close{
+                    & .action-close{
                         margin: 0;
 
                     }
                 } 
             }
+        }
+    }
+
+    &-cart{
+        &-index{
+            & .nav-sections {
+                & .header.links {
+                    & li{
+                        &:first-child {
+                            & a::before{
+                                background-image: url('@{baseDir}images/acc.png');         
+        
+                            }
+                        }
+                    }
+                }
+        
+            }
+        }
+    }
+
+    &-success{
+        padding-top: 20px;
+        & .actions-toolbar {
+            padding-top: 20px
         }
     }
 
@@ -1634,10 +1668,10 @@ ul > li, ol > li {
 
         & .counter.qty{
             position: absolute;
-            top: 9px;
+            top: 140px;
             color: white;
             border-radius: 55%;
-            left: 71px;
+            left: 114px;
             width: 15px;
             height: 20px;
             line-height: 20px;
