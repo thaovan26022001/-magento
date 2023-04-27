@@ -505,16 +505,25 @@ ul > li, ol > li {
     }
 
     &-search{
-        margin: 0 10px;
         order: -1;
+        margin-right: -10px;
+        max-width: 200px;
+        width: 235px;
         & .control {
             border: none;
             position: absolute;
-            top: 50px;
+            top: -14px;
             max-width: 100%;
             left: 10px;
             right: 10px; 
-            
+        }
+
+        & .nested{
+            display: none
+        }
+
+        & .action.search[disabled]{
+            top: -14px
         }
     }
 
@@ -1687,7 +1696,15 @@ ul > li, ol > li {
 }
 
 
+input[type="text"]{
+    border: none;
+    border-bottom: 1px solid @black-color-text;
+    border-radius: 2px;
+}
 
+input:not([disabled]):focus{
+    box-shadow: none;
+}
 
 
 

@@ -12,7 +12,8 @@
 
     <move element="header.panel.wrapper" destination="header-wrapper" after="-"/>
     <move element="header__links" destination="header-wrapper" after="-"/>
-    <move element="header__search" destination="header-wrapper" after="-"/>
+    <move element="top.search" destination="header.panel.wrapper" before="-"/>
+
     <referenceBlock name="div.sidebar.additional" remove="true"/>
     <referenceBlock name="page.messages" remove="true"/>
     <referenceBlock name="copyright" remove="true"/>
@@ -37,9 +38,6 @@
 
     <container name="header__links" htmlClass="header__links" htmlTag="div">
         <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::header_like.phtml"></block>
-    </container>
-    <container name="header__search" htmlClass="header__search" htmlTag="div">
-        <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::header_search.phtml"></block>
     </container>
 
 
