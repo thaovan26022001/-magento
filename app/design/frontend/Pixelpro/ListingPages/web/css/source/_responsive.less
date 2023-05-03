@@ -8,6 +8,12 @@
     
     }
 
+    .header {
+
+
+    }
+
+
     .navigation {
         & .level0 {
             
@@ -103,8 +109,16 @@
 }
 
 @media (min-width: (@screen__m)) {
+
     .overflow-x{
         overflow-x: hidden;
+    }
+
+    .link.wishlist{
+        padding-left: 60px;
+        padding-right: 30px;
+        padding-top: 3px;
+    
     }
 
     .navigation, 
@@ -129,7 +143,6 @@
             &:last-child{
                 display: none;
             }
-
             &:first-child{
                 position: relative;
                 & a{
@@ -144,14 +157,11 @@
                         display: inline-block;
                         vertical-align: middle;
                         top: 3px;
-                        
+                    
                     }
-
                 }
             }
-
         }
-
 
         &.content {
             padding: 10px 0;
@@ -166,7 +176,6 @@
     
                 &::after {
                     font-size: 26px;
-        
                 }
             }
         } 
@@ -177,7 +186,103 @@
     }
 
     .not-logged-in{
+
         display: none;
+    }
+
+    input[type="text"]{
+        border: none;
+        border-bottom: 1px solid @black-color-text;
+    }
+
+    .category{
+        &-earings{
+            &.page-with-filter {
+                & .rings__content{
+                    padding-right: 73px;
+                    padding-left: 0;
+                }
+            }
+
+            & .container{
+                &__shop{
+                    &-card{
+                        &-btn{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-necklaces{
+            &-submenu{
+                & .container{
+                    &__shop{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        &-men-navbar,
+        &-more-jewellery,
+        &-bracelets{
+            &.page-with-filter {
+
+                & .display-column{
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+        &-bracelets{
+            &.page-with-filter {
+                
+                & .rings{
+                    &__video{
+
+                        &-second{
+                            order: 0;
+                        }
+
+                        &-bracelets{
+                            align-items: flex-start;
+                            padding-left: 46px;
+
+                            &-img{
+                                display: flex;
+                                justify-content: end;
+                                & img{
+
+                                    padding-left: 16.667%;
+                                }
+                            }
+                            & .rings__content{
+                                padding-left: 0;
+                            }
+
+
+                        }
+                    }
+
+                }
+
+                & .metal{
+
+                    & .metal{
+                        &__layout{
+                            padding-left: 16.667%;
+                        }
+                    }
+
+                    &__img{
+                        padding-top: 50px;
+                    }
+
+                }
+            }
+        }
     }
 
     .block {
@@ -189,12 +294,9 @@
                             overflow-x: hidden;
                             display: grid;
                             grid-template-columns: 1fr 1fr 1fr;
-
                         }
-    
                     }
                 }
-    
             }
         }
 
@@ -202,11 +304,10 @@
             & .block-content.filter-content {
                 & .filter-options {
                     & .filter-options-content{
-                            & ol {
-                                display: flex;
-        
-                            }
-
+                        & ol {
+                            display: flex;
+    
+                        }
                     }
                         
                 }
@@ -216,12 +317,18 @@
         }
 
         &-search {
-            display: none;
+            margin-right: -12px;
+
+            & .control{
+                top: -26px;
+            }
+            & .action.search[disabled], .block-search .action.search{
+                top: -20px;             
+            }
         }
 
         &-title {
             &.filter-title{
-
                 & strong{
                     font-weight: 600;
                     color: @listing-text-color;
@@ -230,6 +337,13 @@
         }
     }
 
+    .panel {
+        &.wrapper {
+            & .minicart-wrapper{
+                padding: 0 30px;
+            }
+        }
+    }
 
     .minicart{
         &-wrapper {
@@ -244,21 +358,6 @@
             }
         }
 
-    }
-
-    .link.wishlist{
-        padding-left: 60px;
-        padding-right: 30px;
-        padding-top: 3px;
-    
-    }
-
-    .panel {
-        &.wrapper {
-            & .minicart-wrapper{
-                padding: 0 30px;
-            }
-        }
     }
 
     .level-top .ui-menu-item-wrapper {
@@ -342,11 +441,9 @@
 
     }
 
-
     .products-list .product-item-photo {
         padding: 0;
     }
-
 
     .page {
         &-header {
@@ -375,9 +472,9 @@
     .sections {
         &.nav-sections{
             border-bottom: 1px solid @border-color;
+
         }
     }
-
 
     .minicart{
         &-wrapper {
@@ -423,7 +520,6 @@
     .page {
         &-product{
             &-configurable{
-    
                 & .minicart{
                     &-wrapper {          
                         & .action.showcart {
@@ -440,8 +536,6 @@
                           
                 
                             }
-                
-                
                         }
                     }
                 }
@@ -485,14 +579,8 @@
                         width: calc(100% - 60%);
                     }
                 }
-
             }
         }
-    }
-
-    .breadcrumbs{
-        padding: 26px 0;
-
     }
 
     .product{
@@ -506,7 +594,6 @@
                     flex: 0 0 100%;
                     max-width: 100%;
                 }
-
                 & .price-box.price-final_price{
                     padding: 14px 0;
                 }
@@ -515,7 +602,6 @@
                     padding: 0;
                 }
             }
-
             &-main{
                 & .page-title-wrapper.product{
                     display: block;
@@ -554,6 +640,7 @@
             }
         }
     }
+
 
 }
 
@@ -657,6 +744,8 @@
                 z-index: 1;
             }
         }
+
+
     }
 
     .navigation {
@@ -665,11 +754,13 @@
             flex-direction: column;
             background-color: @white-color;
         }
+
         & li{
             &.level0{
                 padding: 0 32px;
             }
         }
+
         & .level0{
             &.parent > .level-top{
                 padding: 0;
@@ -690,6 +781,8 @@
                     }
                 }
             }
+
+
 
             & .level1{
                 padding-top: 14px;
@@ -725,6 +818,7 @@
                     }
                 }
             }
+
         }
     }
 
@@ -749,7 +843,7 @@
 
 
     }
-
+ 
     .block{
         &.filter{
             display: block;
@@ -766,8 +860,8 @@
             & strong {
                 float: right;
                 font-size: 18px;
-
             }
+
 
             & .filter-title {
                 margin-bottom: 0;
@@ -775,6 +869,11 @@
                 & strong{
                     color: @white-color;
                 }
+                
+            }
+
+            & .filter-title {
+                margin-bottom: 0;
                 
             }
 
@@ -855,6 +954,23 @@
 } 
 
 @media only screen and (min-width: (@screen__l )) {
+
+    .category{
+        &-bracelets{
+            &.page-with-filter {
+
+                & .rings{
+                    &__content {
+                        padding-left: 0;
+                        padding-right: 60px;
+                    }
+                }
+
+
+            }
+        }
+    }
+
     .header {
         &.content {
 
@@ -1621,7 +1737,6 @@
             align-items: center;
             margin: 0 0 30px 0;
 
-
             &-list {
                 display: flex;
                 order: 1;
@@ -1642,22 +1757,17 @@
     }
 
     .block {
-
         &.filter{
-    
             & .block-content.filter-content {
                 & .filter-options {
-    
                     & .filter-options-content{
                         & ol {
                             display: flex;
-    
                         }
-                
                     }
                 }
-
             }
+            
             &.active{
                 position: static;
                 overflow-y: hidden;
@@ -1690,15 +1800,11 @@
     
             }
         }
-
-
-
     }
 
     .breadcrumbs {
         padding: 0 32px;
     }
-
 
     .page{
         &-product{
@@ -1780,8 +1886,6 @@
         }
     
     }
-
-
 
     .page-with-filter{
         & .container{

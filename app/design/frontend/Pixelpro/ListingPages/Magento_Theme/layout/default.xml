@@ -11,22 +11,18 @@
 
 
     <move element="header.panel.wrapper" destination="header-wrapper" after="-"/>
-    <move element="header__links" destination="header-wrapper" after="-"/>
-    <move element="top.search" destination="header.panel.wrapper" before="-"/>
-
+    <move element="top.search" destination="header.panel.wrapper" before="minicart"/>
+    <referenceBlock name="product.info.stock.sku" remove="true"/>
     <referenceBlock name="div.sidebar.additional" remove="true"/>
-    <referenceBlock name="page.messages" remove="true"/>
     <referenceBlock name="copyright" remove="true"/>
     <referenceContainer name="footer-container" htmlClass="footer"></referenceContainer>
     <referenceBlock name="report.bugs" remove="true"/>
     <referenceBlock name="footer_links" remove="true"/>
-
+    <referenceBlock name="page.messages" remove="true"/>
     <move element="page.main.title" destination="product.info.main" before="-"/>
     <move element="product.info.review"  destination="product.info.main" after="page.main.title" />
     <move element="product.info.social" destination="product.info.options.wrapper.bottom" before="-"/>
     <move element="product.info.price" destination="page.main.title" after="-"/>
-
-
     <move element="footer-head" destination="footer-container" before="-"/>
     <move element="footer__subscribe" destination="footer-container" before="-"/>
     <move element="footer__sponsor" destination="footer-container" after="footer__subscribe"/>
@@ -34,6 +30,15 @@
     <move element="header__search" destination="header.panel.wrapper" before="-"/>
     <move element="header__links" destination="header.panel.wrapper" before="-"/>
     <move element="minicart" destination="header.panel.wrapper" before="-"/>
+
+        <referenceBlock name="top.links">
+        <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true"> </argument>
+                <argument name="sortOrder" xsi:type="number">110</argument>
+            </arguments>
+        </block>
+    </referenceBlock>
 
 
     <container name="header__links" htmlClass="header__links" htmlTag="div">
