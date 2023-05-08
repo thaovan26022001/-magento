@@ -116,7 +116,7 @@
 
     .link.wishlist{
         padding-left: 60px;
-        padding-right: 30px;
+
         padding-top: 3px;
     
     }
@@ -190,9 +190,12 @@
         display: none;
     }
 
-    input[type="text"]{
-        border: none;
-        border-bottom: 1px solid @black-color-text;
+    .form.minisearch{
+        & input[type="text"]{
+            border: none;
+            border-bottom: 1px solid @black-color-text;
+        }
+
     }
 
     .category{
@@ -224,7 +227,7 @@
                 }
             }
         }
-
+        &-collection,
         &-men-navbar,
         &-more-jewellery,
         &-bracelets{
@@ -236,6 +239,7 @@
                 }
             }
         }
+
         &-bracelets{
             &.page-with-filter {
                 
@@ -280,6 +284,19 @@
                         padding-top: 50px;
                     }
 
+                }
+            }
+        }
+
+        &-collection {
+            & .container{
+                &__shop{
+                    &-card{
+                        &-btn{
+                            width: 30%;
+                            padding: 12px 48px;
+                        }
+                    }
                 }
             }
         }
@@ -539,7 +556,22 @@
                         }
                     }
                 }
-    
+
+                #option-label-chain_colour-188-item{
+                    &-402{
+                        background-image: url('@{baseDir}images/white_11zon.jpg')  !important;
+                    }
+                
+                    &-403{
+                        background-image: url('@{baseDir}images/yellow_11zon.jpg')  !important;
+                    }
+                
+                    &-404{
+                        background-image: url('@{baseDir}images/red_11zon.jpg')  !important;
+                    }
+                }
+                    
+                
                 & #option-label-color-93-item{
                     &-58{
                         background-image: url('@{baseDir}images/white_11zon.jpg')  !important;
@@ -639,6 +671,55 @@
                 left: 71px;
             }
         }
+    }
+
+    .customer{
+        &-account{
+            &-create{
+                & .columns {
+                    & .column.main{
+                        display: flex;
+                    }
+                }
+
+                & .form-create-account{
+                    flex: 0 0 70%;
+                    min-width: 0 !important;
+                    width: 70%;
+                }
+
+                & .field.required{
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                & .label{
+                    text-align: left !important;
+                    margin-bottom: 8px !important;
+                }
+                
+                & .legend{
+                    margin-left: 0 !important;
+                }
+
+                & .fieldset > .field.choice:before{
+                    width: 0;
+                }
+                .actions-toolbar{
+                    margin-left: 50% !important;
+                    & button {
+                        width: 218px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .register-additional{
+        flex: 0 0 30%;
+        max-width: 30%;
+        margin-top: 40px;
     }
 
 

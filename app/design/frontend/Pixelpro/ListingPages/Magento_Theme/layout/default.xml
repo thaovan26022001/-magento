@@ -30,15 +30,24 @@
     <move element="header__search" destination="header.panel.wrapper" before="-"/>
     <move element="header__links" destination="header.panel.wrapper" before="-"/>
     <move element="minicart" destination="header.panel.wrapper" before="-"/>
+    <move element="top.search.second" destination="header-wrapper" after="logo"/>
 
-        <referenceBlock name="top.links">
-        <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
-            <arguments>
-                <argument name="label" xsi:type="string" translate="true"> </argument>
-                <argument name="sortOrder" xsi:type="number">110</argument>
-            </arguments>
-        </block>
+
+    <referenceBlock name="top.links">
+    <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
+        <arguments>
+            <argument name="label" xsi:type="string" translate="true"> </argument>
+            <argument name="sortOrder" xsi:type="number">110</argument>
+        </arguments>
+    </block>
     </referenceBlock>
+
+    <block class="Magento\Framework\View\Element\Template" name="top.search.second" as="topSearch" template="Magento_Search::form.mini-2.phtml">
+        <arguments>
+            <argument name="configProvider" xsi:type="object">Magento\Search\ViewModel\ConfigProvider</argument>
+                <argument name="additionalSearchFormData" xsi:type="object">Magento\Search\ViewModel\AdditionalSearchFormData</argument>
+            </arguments>
+    </block>
 
 
     <container name="header__links" htmlClass="header__links" htmlTag="div">

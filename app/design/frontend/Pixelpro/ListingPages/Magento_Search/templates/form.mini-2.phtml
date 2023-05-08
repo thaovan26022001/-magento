@@ -17,7 +17,7 @@ $helper = $configProvider->getSearchHelperData();
 $allowedSuggestion = $configProvider->isSuggestionsAllowed();
 $quickSearchUrl = $allowedSuggestion ? $escaper->escapeUrl($helper->getSuggestUrl()) : '';
 ?>
-<div class="block block-search hide-on-mobi show-on-tablet show-on-pc">
+<div class="block block-search show-on-mobi hide-on-tablet hide-on-pc">
     <div class="block block-title"><strong><?= $escaper->escapeHtml(__('Search')) ?></strong></div>
     <div class="block block-content">
         <form class="form minisearch" id="search_mini_form"
