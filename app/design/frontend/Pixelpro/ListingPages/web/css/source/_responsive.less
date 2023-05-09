@@ -88,6 +88,8 @@
 
 
 
+
+
 }
 
 @media (max-width: (@screen__ms)){
@@ -333,6 +335,7 @@
             }
         }
 
+
         &-search {
             margin-right: -12px;
 
@@ -349,6 +352,29 @@
                 & strong{
                     font-weight: 600;
                     color: @listing-text-color;
+                }
+            }
+        }
+
+        &.block-collapsible-nav {
+            & .content.block-collapsible-nav-content {
+                & ul {
+                    & li{
+                        transition: margin-left .1s linear .1s;
+                        &::after {
+                            display: none;
+                        }
+
+                        &:hover{
+                            margin-left: 10px
+                        }
+
+                        & a:hover{
+                            color: @noti-color;
+                            
+                        }
+
+                    }
                 }
             }
         }
@@ -688,28 +714,38 @@
                     width: 70%;
                 }
 
-                & .field.required{
-                    display: flex;
-                    flex-direction: column;
+
+
+                .actions-toolbar{
+                    margin-left: 50% !important;
+                    & button {
+                        width: 218px;
+                    }
+                }
+
+            }
+
+            &-create,
+            &-edit{
+                & .legend{
+                    margin-left: 0 !important;
+                    & span{
+                        .fonts-14();
+                    }
                 }
 
                 & .label{
                     text-align: left !important;
                     margin-bottom: 8px !important;
                 }
-                
-                & .legend{
-                    margin-left: 0 !important;
+
+                & .field.required{
+                    display: flex;
+                    flex-direction: column;
                 }
 
                 & .fieldset > .field.choice:before{
                     width: 0;
-                }
-                .actions-toolbar{
-                    margin-left: 50% !important;
-                    & button {
-                        width: 218px;
-                    }
                 }
 
             }
@@ -1856,17 +1892,6 @@
             }
         }
 
-        &.block-collapsible-nav {
-            & .content.block-collapsible-nav-content {
-                & ul {
-                    & li::after {
-                        display: none;
-                        
-                    }
-                }
-            }
-        }
-
         &.widget {
             &.block-products-list.grid {
                 & .block-content {
@@ -1881,6 +1906,7 @@
     
             }
         }
+
     }
 
     .breadcrumbs {
@@ -2056,9 +2082,8 @@
     .customer{
         &-account{
             &-create{
-                & .form-create-account{
+                .login-information{
                     display: flex;
-
                 }
 
                 & .fieldset.create.account,
@@ -2067,7 +2092,39 @@
                     max-width: 50%;
                 }
 
+                & .actions-toolbar{
+                    margin-left: 60% !important;
+
+                    & .action.submit.primary{
+                        padding: 12px 20px;
+                        min-width: 218px;
+                        height: 42px;
+                        line-height: 21px;
+
+                    }
+                }
+
+                & .register-additional{
+                    margin-top: 0;
+                }
+
             } 
+
+            &-index{
+                & .block{
+                    &.block-dashboard-info{
+                        & .block-title{
+                            max-width: 760px;
+                        }
+        
+                    }
+    
+                }
+
+                & .sidebar-main{
+                    padding-right: 0;
+                }
+            }
         }
     }
 

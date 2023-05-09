@@ -497,6 +497,7 @@ ul > li, ol > li {
 
         }
     }
+    
     &-collapsible {
         &-nav{
             top: 0;
@@ -515,6 +516,35 @@ ul > li, ol > li {
                         padding-left: 14px;
                     }
                 }
+            }
+
+            & .content{
+                background-color: @white-color !important;
+            }
+
+            & .nav.item{
+                border-bottom: 1px solid @border-color;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                &:nth-of-type(5),
+                &:nth-of-type(9){
+                    display: none;
+
+                }
+                &.current{
+                    border-bottom: 1px solid #ff5501 !important;
+    
+                }
+                & .item > a{
+                    padding: 5px 0;
+    
+                }
+
+            }
+
+            & .item.current > strong{
+                border-left: none;
+
             }
         }
 
@@ -1831,10 +1861,93 @@ input:not([disabled]):focus{
             }
 
             & .legend{
+                margin-top: 32px;
+                margin-bottom: 32px;
                 & span{
                     .fonts-4();
                 }
             }
+
+            & .fieldset > .field.required > .label:after{
+                color: #e02b27;
+            }
+        }
+
+        &-index{
+            & .link.authorization-link{
+                & a:hover{
+                    color: @noti-color;
+                }
+            }
+
+            & .block{
+                &.block-dashboard-info{
+                    & .block-title{
+                        max-width: 760px;
+                        & strong{
+                            color: #8a8a8a;
+                            .fonts-1() !important;
+                        }
+
+                        
+                    }
+                }
+                & .box {
+                    &.box-shipping-address,
+                    &.box-newsletter,
+                    &.box-billing-address,
+                    &.box-information{
+                        background-color: @header-color;
+                        & .box-title{
+                            position: relative;
+                            padding: 1px 15px;
+                            border-bottom: 1px solid @border-color;
+                            .display-flex() !important;
+                            align-items: center;
+                            width: 100%;
+    
+                            & span{
+                                .fonts-2() !important;
+                                color: @text-color;
+                                margin: 0 !important;
+                                padding: 14px 0;
+    
+                            }
+
+                            & .action.edit{
+                                & span{
+                                    display: none;
+                                }
+                                &::after{
+                                    content: " ";
+                                    background-repeat: no-repeat;
+                                    width: 24px;
+                                    height: 24px;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    background-image: url(../images/edit.png);
+                                }
+                            }
+                        }
+
+                        & .box-content{
+                            padding-left: 15px;
+                            padding-top: 7px;
+                        }
+
+                        & .action.change-password{
+                            text-decoration-line: underline;
+                            padding-top: 9px;
+                            padding-left: 15px;
+                            color: @text-color;
+                        }
+
+    
+                    }
+                }
+
+            }
+
         }
 
     }
@@ -1877,6 +1990,13 @@ input:not([disabled]):focus{
     }
 }
 
+
+#password-strength-meter-container{
+    margin-top: 16px;
+    & #password-strength-meter{
+        background-color: @header-color
+    }
+}
 
 
 
