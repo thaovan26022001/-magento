@@ -497,7 +497,7 @@ ul > li, ol > li {
 
         }
     }
-    
+
     &-collapsible {
         &-nav{
             top: 0;
@@ -1948,8 +1948,192 @@ input:not([disabled]):focus{
 
             }
 
+            
+
         }
 
+        &-edit {
+
+            & .fields{
+                margin:  40px 0;
+            }
+
+            & .page-title{
+                padding-top: 14px;
+            }
+
+            & .actions{
+                &-toolbar{
+                    height: 40px;
+                    & .action.save.primary{
+                        margin-bottom: 10px;
+                    }
+                    & .required{
+                        float: left;
+                        font-size: 13px;
+                        padding-top: 5px;
+                        padding-bottom: 40px;
+                    }
+                }   
+            }
+
+            & .description{
+                .fonts-1();
+                padding-bottom: 25px;
+
+            }
+
+            & .button{
+                &-content{
+                    & .content{
+                        .display-column();
+                        row-gap: 20px;
+                    }
+
+                    & .field.choice{
+                        width: 100%;
+                        border: 1px solid red;
+                        background-image: none;
+                        background: @white-color;
+                        border: 1px solid @border-color;
+                        color: @black-color-text;
+                        padding: 12px 20px;
+                        text-align: center;
+                        height: 40px;
+
+                        &:last-child{
+                            order: -1;
+                        }
+                    }
+
+                    & .title{
+                        .fonts-1();
+                        margin-bottom: 15px;
+                    }
+
+                }
+            }
+
+            & .checkbox{
+                display: none;
+            }
+
+
+            & .field{
+                &.choice{
+                    & .label{
+                        & span{
+                            .fonts-3();
+                        }
+                    }
+                }
+
+                & .required{
+                    width: 100% !important;
+                }
+
+            }
+
+            & .legend{
+                & span{
+                    .fonts-4();
+                }
+
+            }
+
+            & .page-wrapper{
+                min-height: 100%;
+    
+            }
+
+            & .footer{
+                padding-top: 0;
+                margin-top: 50px;
+            }
+            
+        }
+
+    }
+
+    &-address{
+        &-form{
+            & .form-address-edit{
+                & .fieldset{
+                    &:first-child{
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        & .field-name-lastname,
+                        & .field-name-firstname{
+                            flex: 0 0 48.5%;
+                            max-width: 48.5%;
+                        }
+                    }
+
+                    &:nth-child(2){
+                        margin-bottom: 0;
+                    }
+
+                    & .field-name-firstname{
+                        margin-right: 9px;
+                    }
+
+                    & .field.company {
+                        width: 100%;
+                    }
+                }
+
+                & .fields{
+                    .display-flex();
+
+                    & .field.required{
+                        flex: 0 0 48.5%;
+                        max-width: 48.5%;
+
+                        & .control{
+                            & select{
+                                height: 40px;
+                                .fonts-1();
+                            }
+                        }
+                    }
+                }
+
+                & .message.info{
+                    padding: 0 0 10px 0;
+                    background-color: @white-color;
+                    color: @black-color-text;
+                    .fonts-1();
+
+                }
+
+                & .message.info > *:first-child:before{
+                    display: none;
+                }
+
+                & .actions-toolbar{
+                    & .primary{
+                        margin-bottom: 10px;
+                    }
+
+                    & .secondary{
+                        float: left;
+                        & .action.back{
+                            display: flex !important;
+                            align-items: center;
+                            & span{
+                                .fonts-3();
+                            }
+                        }
+                    }
+
+                    & .bottom-text{
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+        }
     }
 }
 
@@ -1998,6 +2182,14 @@ input:not([disabled]):focus{
     }
 }
 
+
+
+.input-text{
+    &.required-entry{
+        height: 40px;
+    }
+    
+}
 
 
 
