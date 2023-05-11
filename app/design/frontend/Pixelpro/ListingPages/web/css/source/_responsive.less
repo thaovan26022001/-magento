@@ -700,6 +700,37 @@
     }
 
     .customer{
+        &-account-create,
+        &-account-edit,
+        &-address-form{
+            & .legend{
+                margin-left: 0 !important;
+                & span{
+                    .fonts-14();
+                }
+            }
+
+            & .label{
+                text-align: left !important;
+                margin-bottom: 8px !important;
+            }
+
+            & .field.required{
+                .display-column();
+            }
+
+            & .fieldset > .field.choice:before{
+                width: 0;
+            }
+
+            & .form-address-edit{
+                & .label{
+                    width: 100% !important;
+                }
+            }
+
+        }
+        
         &-account{
             &-create{
                 & .columns {
@@ -721,31 +752,6 @@
                     & button {
                         width: 218px;
                     }
-                }
-
-            }
-
-            &-create,
-            &-edit{
-                & .legend{
-                    margin-left: 0 !important;
-                    & span{
-                        .fonts-14();
-                    }
-                }
-
-                & .label{
-                    text-align: left !important;
-                    margin-bottom: 8px !important;
-                }
-
-                & .field.required{
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                & .fieldset > .field.choice:before{
-                    width: 0;
                 }
 
             }
@@ -792,13 +798,49 @@
                     margin-top: 95px;
                 }
             }
+
+            &-index{
+                & .column.main{
+                    padding-left: 32px;
+                }
+            }
         }
+
+        &-address-form{
+            & .form-address-edit{
+                & .control{
+                    width: 100% !important;
+                }
+            }
+
+            & .actions-toolbar{
+                .display-column();
+                margin-left: 0 !important;
+
+                & .primary{
+                    width: 100% !important;
+                }
+            }
+
+            & .fieldset{
+                margin-left: 20%;
+                max-width: 600px;
+            }
+        }
+
     }
 
     .register-additional{
         flex: 0 0 30%;
         max-width: 30%;
         margin-top: 40px;
+    }
+
+    .account {
+        & .link.authorization-link{
+            padding-left: 0;
+            margin-left: 10px;
+        }
     }
 
 
@@ -2167,6 +2209,34 @@
                 & .sidebar-main{
                     padding-right: 0;
                 }
+
+                & .main{
+                    padding-left: 0;
+                }
+
+                & .account{
+                    &-content{
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        & .block-title{
+                            flex: 0 0 100%;
+                            width: 100%;
+                            margin-bottom: 28px;
+                        }
+
+                        & .block-dashboard-info,
+                        & .block-dashboard-addresses{
+                            flex: 0 0 48.5%;
+                            max-width: 48.5%;
+                            padding-top: 15px;
+                        }
+                        & .block-dashboard-info{
+                            margin-top: 0;
+                            margin-right: 20px;
+                        }
+                    }
+                }
             }
 
             &-edit{
@@ -2205,6 +2275,49 @@
                 & .fieldset{
                     margin: 0 0 20px;
                 }
+            }
+        }
+
+        &-address-form{
+
+            & .actions-toolbar{
+                margin-left: 20% !important;
+                max-width: 600px;
+                
+            }
+        }
+    }
+
+    & .account{
+        & .form-address-edit{
+            & .label{
+                width: 100%
+            }
+        }
+
+        &.newsletter{
+            &-manage{
+                &-index{
+                    & .page-title-wrapper{
+                        padding:2px 0 15px 0;
+                    }
+
+                    & .field.choice{
+                        &:before{
+                            display: none;
+                        }
+                    }
+
+
+                    & .actions-toolbar{
+                        margin-left: 0 !important;
+
+                        & .save{
+                            width: 287px !important;
+                        }
+                    }
+
+                } 
             }
         }
     }

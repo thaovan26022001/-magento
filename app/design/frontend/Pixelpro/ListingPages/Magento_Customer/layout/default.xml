@@ -7,16 +7,17 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-    <move element="authorization-link" destination="sidebar.main" after="sidebar.main.account_nav"/>
+          
+    <move element="authorization-link" destination="customer_account_navigation" after="-" />
+    <referenceBlock name="top.links">
+        <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
+            <arguments>
+                <!--<argument name="label" xsi:type="string" translate="true">My Account</argument>-->
+                <argument name="sortOrder" xsi:type="number">110</argument>
+            </arguments>
+        </block>
+    </referenceBlock>
 
-        <referenceBlock name="top.links">
-            <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
-                <arguments>
-                    <!--<argument name="label" xsi:type="string" translate="true">My Account</argument>-->
-                    <argument name="sortOrder" xsi:type="number">110</argument>
-                </arguments>
-            </block>
-        </referenceBlock>
-       
+          
     </body>
 </page>
