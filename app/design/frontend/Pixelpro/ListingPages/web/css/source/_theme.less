@@ -2120,6 +2120,8 @@ input:not([disabled]):focus{
                     & .field.required{
                         flex: 0 0 48.5%;
                         max-width: 48.5%;
+                        margin-right: 9px;
+
 
                         & .control{
                             & select{
@@ -2168,6 +2170,47 @@ input:not([disabled]):focus{
 
             }
 
+
+
+        }
+
+        &-index{
+            & .box{
+                &-address{
+                    &-shipping,
+                    &-billing{
+                        position: relative;
+
+                    }
+                    &-billing{
+                        margin-top: 30px;
+
+                    }
+                }
+
+                &-title{
+                   padding: 14px 15px;
+                    width: 100%;
+                    border-bottom: 1px solid @border-color;
+                    & span{
+                        .fonts-2() !important;
+                        color: @text-color;
+                    }
+                }
+
+                &-content{
+                    padding-left: 15px;
+                    padding-top: 7px;
+                }
+
+                &-actions{
+                    position: absolute;
+                    top: 0;
+                    right:0;
+                    margin-top: 0;
+
+                }
+            }
 
 
         }
@@ -2245,9 +2288,9 @@ input:not([disabled]):focus{
     &.wishlist{
         &-index{
             &-index{
-
                 & .product{
                     &-item{
+                        margin-left: 0 !important;
                         border-bottom: none;
 
                         &:first-child{
@@ -2260,6 +2303,7 @@ input:not([disabled]):focus{
                         }
 
                         &-photo{
+                            position: relative;
                             margin-right: 0;
                         }
 
@@ -2268,6 +2312,10 @@ input:not([disabled]):focus{
                         }
 
                         &-inner{
+                            position: absolute;
+                            top: 0;
+                            z-index: 9;
+                            right: 0;
                             & .box-tocart{
                                 margin-right: 0;
                             }
@@ -2276,6 +2324,12 @@ input:not([disabled]):focus{
                         & .price{
                             &-box{
                                 margin-left: 0 !important;
+                            }
+                        }
+
+                        &-actions{
+                            & a{
+                                margin-top: 0 !important;
                             }
                         }
                     }

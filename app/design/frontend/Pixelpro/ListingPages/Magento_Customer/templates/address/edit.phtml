@@ -19,7 +19,7 @@ $regionProvider = $block->getRegionProvider();
 <?php $_street = $block->getAttributeData()->getFrontendLabel('street'); ?>
 <?php $_city = $block->getAttributeData()->getFrontendLabel('city'); ?>
 <?php $_region = $block->getAttributeData()->getFrontendLabel('region'); ?>
-<?php $_selectRegion = 'Please select a region, state or province.'; ?>
+<?php $_selectRegion = ''; ?>
 <?php $_displayAll = $block->getConfig('general/region/display_all'); ?>
 
 <?php $_vatidValidationClass = $viewModel->addressGetAttributeValidationClass('vat_id'); ?>
@@ -183,12 +183,7 @@ $regionProvider = $block->getRegionProvider();
                 <span><?= $escaper->escapeHtml(__("It's a default billing address.")) ?></span>
             </div>
         <?php elseif ($block->canSetAsDefaultBilling()): ?>
-            <div class="field choice set billing">
-                <input type="checkbox" id="primary_billing" name="default_billing" value="1" class="checkbox">
-                <label class="label" for="primary_billing">
-                    <span><?= $escaper->escapeHtml(__('Use as my default billing address')) ?></span>
-                </label>
-            </div>
+
         <?php else: ?>
             <input type="hidden" name="default_billing" value="1" />
         <?php endif; ?>
@@ -198,12 +193,7 @@ $regionProvider = $block->getRegionProvider();
                 <span><?= $escaper->escapeHtml(__("Default shipping address.")) ?></span>
             </div>
         <?php elseif ($block->canSetAsDefaultShipping()): ?>
-            <div class="field choice set shipping">
-                <input type="checkbox" id="primary_shipping" name="default_shipping" value="1" class="checkbox">
-                <label class="label" for="primary_shipping">
-                    <span><?= $escaper->escapeHtml(__('Use as my default shipping address')) ?></span>
-                </label>
-            </div>
+
         <?php else: ?>
             <input type="hidden" name="default_shipping" value="1">
         <?php endif; ?>
