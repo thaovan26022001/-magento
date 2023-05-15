@@ -117,8 +117,8 @@
     }
 
     .link.wishlist{
-        padding-left: 60px;
-
+        width: 40px;
+        height: 40px;
         padding-top: 3px;
     
     }
@@ -147,6 +147,8 @@
             }
             &:first-child{
                 position: relative;
+                width: 40px;
+                height: 40px;
                 & a{
                     &::before{
                         content: "";
@@ -383,20 +385,31 @@
     .panel {
         &.wrapper {
             & .minicart-wrapper{
-                padding: 0 30px;
+                width: 40px;
+                height: 40px;
+                padding-top: 7px;
             }
         }
     }
 
     .minicart{
         &-wrapper {
+            order: 1;
             text-align: center;
             margin-left: 0;
 
             & .action.showcart {
                 & .counter.qty {
-                    left: 43px;
+                    left: 21px;
+                    top: 14px;
     
+                }
+            }
+
+            & .block-minicart {
+                &::after,
+                &::before {
+                    right: 32px;
                 }
             }
         }
@@ -516,17 +529,6 @@
         &.nav-sections{
             border-bottom: 1px solid @border-color;
 
-        }
-    }
-
-    .minicart{
-        &-wrapper {
-            & .block-minicart {
-                &::after,
-                &::before {
-                    right: 32px;
-                }
-            }
         }
     }
 
@@ -694,7 +696,7 @@
             & .counter.qty{
 
                 top: 9px;
-                left: 71px;
+                left: 53px;
             }
         }
     }
@@ -841,23 +843,29 @@
             padding-left: 0;
             margin-left: 10px;
         }
+    }
 
-        &.wishlist{
+    .columns{
+        margin-top: 32px;
+    }
+
+    .checkout{
+        &-cart{
             &-index{
-                &-index{
-                    & .product{
-                        &-item{
-                            
+                & .cart{
+                    &-empty{
+                        & h2{
+                            .fonts-4();
+                            margin-top: 12px;
                         }
+
                     }
                 }
             }
         }
     }
 
-    & .columns{
-        margin-top: 32px;
-    }
+    
 
 
 }
