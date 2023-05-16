@@ -17,43 +17,46 @@
 </div>
 
 <div class="block-content">
-    <button type="button"
-            id="btn-minicart-close"
-            class="action close"
-            data-action="close"
-            data-bind="
-                attr: {
-                    title: $t('Close')
-                },
-                click: closeMinicart()
-            ">
-        <span translate="'Close'"></span>
-    </button>
-
+    <div class="minicart-heading">
+        <button type="button"
+                id="btn-minicart-close"
+                class="action close"
+                data-action="close"
+                data-bind="
+                    attr: {
+                        title: $t('Close')
+                    },
+                    click: closeMinicart()
+                ">
+            <span translate="'Close'"></span>
+        </button>
+    
+        <if args="getCartParam('summary_count')">
+            <div class="items-total">
+                <span class="count" if="maxItemsToDisplay < getCartLineItemsCount()" text="maxItemsToDisplay"></span>
+                <translate args="'of'" if="maxItemsToDisplay < getCartLineItemsCount()"></translate>
+                <span class="count" text="getCartParam('summary_count').toLocaleString(window.LOCALE)"></span>
+                    <!-- ko if: (getCartParam('summary_count') > 1) -->
+                        <span translate="'Shopping Bag'"></span>
+                    <!--/ko-->
+                    <!-- ko if: (getCartParam('summary_count') === 1) -->
+                        <span translate="'Item in Cart'"></span>
+                    <!--/ko-->
+            </div>
+        </if>
+    </div>
     <if args="getCartParam('summary_count')">
-        <div class="items-total">
-            <span class="count" if="maxItemsToDisplay < getCartLineItemsCount()" text="maxItemsToDisplay"></span>
-            <translate args="'of'" if="maxItemsToDisplay < getCartLineItemsCount()"></translate>
-            <span class="count" text="getCartParam('summary_count').toLocaleString(window.LOCALE)"></span>
-                <!-- ko if: (getCartParam('summary_count') > 1) -->
-                    <span translate="'Shopping Bag'"></span>
-                <!--/ko-->
-                <!-- ko if: (getCartParam('summary_count') === 1) -->
-                    <span translate="'Item in Cart'"></span>
-                <!--/ko-->
-        </div>
-
         <each args="getRegion('subtotalContainer')" render=""></each>
         <each args="getRegion('extraInfo')" render=""></each>
         <div class="actions" if="getCartParam('summary_count')">
-            <div class="secondary">
+            <div class=" primary">
                 <a class="action viewcart" data-bind="attr: {href: shoppingCartUrl}">
-                    <span translate="'View and Edit Cart'"></span>
+                    <span translate="'View Bag'"></span>
                 </a>
             </div>
         </div>
         <div class="actions" if="getCartParam('possible_onepage_checkout')">
-            <div class="primary">
+            <div class="secondary">
                 <a
                         id="top-cart-btn-checkout"
                         

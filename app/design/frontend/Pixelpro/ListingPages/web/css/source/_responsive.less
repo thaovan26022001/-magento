@@ -406,12 +406,17 @@
                 }
             }
 
-            & .block-minicart {
-                &::after,
-                &::before {
-                    right: 32px;
+            & .block{
+                &-minicart {
+                    min-width: 70%;
+                    &::after,
+                    &::before {
+                        right: 32px;
+                    }
                 }
+                    
             }
+
         }
 
     }
@@ -2063,13 +2068,23 @@
         }
     }
 
-    .minicart-wrapper .block-minicart::before
     .minicart{
         &-wrapper {
             & .action.showcart {
                 & .counter.qty {
                     left: 20px
     
+                }
+            }
+
+            & .block{
+                &-minicart{
+                    min-width: 523px;
+                    top: 100%;
+                    position: absolute;
+                    &::before{
+                        display: block;
+                    }
                 }
             }
 
