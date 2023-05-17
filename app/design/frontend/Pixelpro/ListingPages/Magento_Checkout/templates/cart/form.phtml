@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Copyright © Magento, Inc. All rights reserved.
@@ -10,6 +11,7 @@
 ?>
 <?php $mergedCells = ($this->helper(Magento\Tax\Helper\Data::class)->displayCartBothPrices() ? 2 : 1); ?>
 <?= $block->getChildHtml('form_before') ?>
+
 <div class="cart main actions">
         <?php if ($block->getContinueShoppingUrl()): ?>
             <a class="action continue"
@@ -20,7 +22,9 @@
         <?php endif; ?>
 
         <input type="hidden" value="" id="update_cart_action_container" data-cart-item-update=""/>
-    </div>
+</div>
+
+
 <form action="<?= $block->escapeUrl($block->getUrl('checkout/cart/updatePost')) ?>"
           method="post"
           id="form-validate"
@@ -40,15 +44,13 @@
                class="cart items data table"
                data-mage-init='{"shoppingCart":{"emptyCartButton": ".action.clear",
                "updateCartActionContainer": "#update_cart_action_container"}}'>
-            <caption class="table-caption"><?= $block->escapeHtml(__('Shopping Cart Items')) ?></caption>
+            <caption class="table-caption"><?= $block->escapeHtml(__('My Cart')) ?></caption>
             <thead>
                 <tr>
-                    <th class="col item" scope="col"><span><?= $block->escapeHtml(__('Item')) ?></span></th>
-                    
-                    <!--<th class="col qty" scope="col"><span><?= $block->escapeHtml(__('Qty')) ?></span></th>-->
-                    
+                    <th class="col qty hide-on-tablet hide-on-pc" scope="col"><span><?= $block->escapeHtml(__('Qty')) ?></span></th>
                 </tr>
             </thead>
+
             <?php foreach ($block->getItems() as $_item): ?>
                 <?= $block->getItemHtml($_item) ?>
             <?php endforeach ?>
@@ -59,6 +61,7 @@
             </div>
         <?php endif ?>
     </div>
+
 </form>
 <?= $block->getChildHtml('checkout.cart.order.actions') ?>
 <?= $block->getChildHtml('shopping.cart.table.after') ?>

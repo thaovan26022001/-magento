@@ -865,6 +865,114 @@
                         }
 
                     }
+
+                    &-summary{
+                        width: 100% !important;
+                        position: static;
+                    }
+
+                    &.item{
+                        display: table-row-group !important;
+
+                        & .item-info{
+                            //display: block !important;
+                           
+                        }
+                    }
+                }
+
+                & .form{
+                    &-cart{
+                        width: 100% !important;
+                    }
+                }
+
+                & .item{
+                    &-options{
+                        display: flex;
+                        flex-wrap: wrap;
+                        position: relative;
+                        padding: 24px 0;
+                        border-bottom: 1px solid @border-color;
+                        &-list{
+                            flex: 0 0 50%;
+                            max-width: 50%;
+                            .display-flex();
+                            padding-bottom: 4px;
+                            &:nth-child(odd) {
+                                padding-right: 5%;
+                            }
+
+                            &:nth-child(even){
+                                padding-left: 5%;
+                            }
+                        }
+
+                        &::before{
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            height: calc(100% - 48px);
+                            border-left: 1px solid @border-color;
+                            right: 50%;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                        
+                    }
+                }
+
+                & .col{
+                    &.item{
+                        & .product{
+                            &-item{
+                                &-photo{
+                                    min-width: 190px;
+                                    width: 190px;
+                                    & img{
+                                        width: 170px;
+                                        height: 170px;          
+                                    }
+                                }
+                                &-details{
+                                    flex: 0 0 70%;
+                                    max-width: 70%;
+                                }
+
+                                &-name{
+                                    width: 100%;
+                                    padding-bottom: 17px;
+                                    border-bottom: 1px solid @border-color;
+                                }
+                            }
+                                
+                        }
+                    }
+
+                    &.qty{
+                        padding-right: 27%;
+                        & .field.qty{
+                            & .label{
+                                position: relative !important ;
+                                padding-right: 4px;
+
+                            }
+                        }
+                    }
+
+                    &.qty,
+                    &.subtotal{
+                        float: left !important;
+                        left: 100%;
+                        position: relative;
+                    }
+                }
+
+                & .actions{
+                    &-toolbar{
+                        padding-bottom: 1px;
+                        border-bottom: 1px solid @border-color;
+                    }
                 }
             }
         }

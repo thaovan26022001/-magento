@@ -127,7 +127,16 @@ ul > li, ol > li {
                         }
                     }
                 }
+
                   
+            }
+
+            #minicart{
+                &-content{
+                    &-wrapper{
+                        padding-bottom: 40px;
+                    }
+                }
             }
 
             & .action.primary.checkout{
@@ -150,14 +159,6 @@ ul > li, ol > li {
                 & .label{
                     & span{
                         .fonts-3();
-                    }
-                }
-            }
-
-            #minicart{
-                &-content{
-                    &-wrapper{
-                        padding-bottom: 40px;
                     }
                 }
             }
@@ -193,6 +194,7 @@ ul > li, ol > li {
                 display: none;
             }
 
+
             & .block{
                 &-content{
                     .display-column();
@@ -218,16 +220,6 @@ ul > li, ol > li {
                                 }
                             }
                         }
-
-                        &:last-child{
-                            text-align: left;
-                        }
-                    }
-                }
-
-                &-minicart{
-                    & .subtitle {
-                        
                     }
                 }
                     
@@ -331,9 +323,8 @@ ul > li, ol > li {
         }
         &-wrapper{
             height: 632.594px !important;
-
             margin: 0;
-            padding: 15px 15px 170px 15px;
+            padding: 15px 15px 160px 15px;
         }
     }
 
@@ -1728,6 +1719,159 @@ ul > li, ol > li {
                         }
                     }
                 }
+
+                &-container{
+                    background-color: @white-color;
+                    .display-column();
+                   
+                }
+
+                &.item{
+                    display: block;
+                    padding-bottom: 24px;
+                    border: none !important;
+                    background-color: @header-color !important;
+
+                }
+
+                &-summary{
+                    order: 1;
+                    background-color: @white-color;
+
+                    & .discount{
+                        & .title{
+                            padding-top: 20px;
+                        }
+                    }
+                   
+                }
+
+                &.main{
+                    &.actions{
+                        padding-bottom: 40px;
+                    }
+                }
+            }
+
+            & .col{
+                &.price{
+                    display: none !important;
+                }
+
+                &.qty{
+                    & .field.qty{
+                        display: block !important;
+                    }
+                }
+
+                &.subtotal{
+                    &::before{
+                        display: none !important;
+                    }
+                }
+
+                &.qty,
+                &.subtotal{
+                    float: right !important;
+                    padding-top: 0;
+                }
+
+                &.item{
+                    padding: 0 !important;
+                    display: flex !important;
+                    & .product-item-photo{
+                        padding: 0 !important; 
+                        width: 88px;
+                        max-width: 88px;
+                        min-height: 88px !important;
+                        top: initial;
+                        position: relative !important;
+                        float: left;
+                        margin-right: 12px;
+    
+                        & img{
+                            aspect-ratio: 1;
+                            width: 85px;
+                            height: 85px;
+                        }
+
+                    }
+                    
+                }
+            }
+
+            & .action{
+                background-color: @white-color !important;
+                
+                &-towishlist{
+                    display: none !important;
+                }
+                &.continue{
+                    float: right;
+                    border-bottom: 1px solid @border-color;
+                }
+
+            }
+
+            & .product{
+                &-item{
+                    &-name{
+                        & a{
+                            .fonts-3();
+                        }
+                    }
+                }
+            }
+
+            & .item{
+                &-options{
+                    margin-bottom: 0;
+                    
+                    &-list{
+                       
+                        & dt{
+                            color: @text-color;
+                        }
+
+                        & dd{
+                            .fonts-1();
+                        }
+                    }
+                }
+
+                &-actions{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    & td{
+                        padding: 0;
+                        text-align: right;
+                        & .action{
+                            padding: 0 !important;
+                            margin: 0 !important;
+
+                            &-edit{
+                                margin-right: 8px !important;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+
+            & .field.note{
+                .fonts-1();
+            }
+
+            & .mark{
+                color: @text-color;
+            }
+            & .grand.totals{
+                & span,
+                & strong{
+                    font-weight: 700;
+                    color: @black-color-text;
+                }
             }
         }
     }
@@ -1741,6 +1885,8 @@ ul > li, ol > li {
 
 
 }
+
+
 
 .review-form .action.submit.primary {
     background: @black-color-text;
@@ -2101,7 +2247,6 @@ input:not([disabled]):focus{
 
             & .primary{
                 color: @white-color;
-
                 & a{
                     line-height: 28px;
                 }
@@ -2155,8 +2300,7 @@ input:not([disabled]):focus{
                         .fonts-1() !important;
                     }
                 }
-                &.block-dashboard-info{
-                }
+
                 & .box {
 
                     &.box-shipping-address,
@@ -2320,6 +2464,8 @@ input:not([disabled]):focus{
             }
         }
 
+        
+
     }
 
     &-address{
@@ -2360,7 +2506,6 @@ input:not([disabled]):focus{
                         flex: 0 0 48.5%;
                         max-width: 48.5%;
                         margin-right: 9px;
-
 
                         & .control{
                             & select{
@@ -2501,7 +2646,6 @@ input:not([disabled]):focus{
         
     }
 
-
     &.sales{
         &-order{
             &-history{
@@ -2535,10 +2679,11 @@ input:not([disabled]):focus{
     &.wishlist{
         &-index{
             &-index{
+
                 & .product{
                     &-item{
-                        margin-left: 0 !important;
                         border-bottom: none;
+                        margin-left: 0 !important;
 
                         &:first-child{
                             border-top: none;
@@ -2561,22 +2706,22 @@ input:not([disabled]):focus{
                         &-inner{
                             position: absolute;
                             top: 0;
-                            z-index: 1;
                             right: 0;
+                            z-index: 1;
                             & .box-tocart{
                                 margin-right: 0;
+                            }
+                        }
+
+                        &-actions{
+                            & a{
+                                margin-top:0 !important;
                             }
                         }
 
                         & .price{
                             &-box{
                                 margin-left: 0 !important;
-                            }
-                        }
-
-                        &-actions{
-                            & a{
-                                margin-top: 0 !important;
                             }
                         }
                     }
@@ -2613,6 +2758,8 @@ input:not([disabled]):focus{
     }
     
 }
+
+
 
 
 
