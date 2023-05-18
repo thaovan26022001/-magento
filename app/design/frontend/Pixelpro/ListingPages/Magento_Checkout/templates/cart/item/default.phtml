@@ -97,6 +97,13 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
                 <?= $block->getUnitPriceHtml($_item) ?>
             </td>
         <?php endif; ?>
+        <td class="col subtotal" data-th="<?= $block->escapeHtml(__('Subtotal')) ?>">
+            <?php if ($canApplyMsrp): ?>
+                <span class="cart msrp subtotal">--</span>
+            <?php else: ?>
+                <?= $block->getRowTotalHtml($_item) ?>
+            <?php endif; ?>
+        </td>
         <td class="col qty" data-th="<?= $block->escapeHtml(__('Qty')) ?>">
             <div class="field qty">
                 <div class="control qty">
@@ -117,14 +124,6 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
                     </label>
                 </div>
             </div>
-        </td>
-
-        <td class="col subtotal" data-th="<?= $block->escapeHtml(__('Subtotal')) ?>">
-            <?php if ($canApplyMsrp): ?>
-                <span class="cart msrp subtotal">--</span>
-            <?php else: ?>
-                <?= $block->getRowTotalHtml($_item) ?>
-            <?php endif; ?>
         </td>
     </tr>
     <tr class="item-actions">

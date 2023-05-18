@@ -874,10 +874,23 @@
                     &.item{
                         display: table-row-group !important;
 
-                        & .item-info{
-                            //display: block !important;
-                           
+                        & .item{
+                            &-info{
+                                border-bottom: 24px solid transparent;
+                            } 
+                            &-actions{
+                                & .actions{
+                                    &-toolbar{
+                                        padding-bottom: 1px;
+                                        padding-left: 50px;
+                                        border-bottom: 1px solid @border-color;
+                                    }
+                                }
+
+
+                            }
                         }
+
                     }
                 }
 
@@ -950,7 +963,7 @@
                     }
 
                     &.qty{
-                        padding-right: 27%;
+                        padding-right: 55px;
                         & .field.qty{
                             & .label{
                                 position: relative !important ;
@@ -961,18 +974,10 @@
                     }
 
                     &.qty,
-                    &.subtotal{
-                        float: left !important;
-                        left: 100%;
+                    &.subtotal{           
                         position: relative;
                     }
-                }
 
-                & .actions{
-                    &-toolbar{
-                        padding-bottom: 1px;
-                        border-bottom: 1px solid @border-color;
-                    }
                 }
             }
         }
@@ -2470,6 +2475,77 @@
 
     }
 
+    .checkout{
+        &-cart{
+            &-index{
+                & .cart{
+                    &-container{
+                        flex-direction: row;
+                    }
+
+                    &-summary{
+                        flex: 0 0 20%;
+                        max-width: 20%;
+                    }
+
+                    &.item{
+                        background-color: @white-color !important;
+
+                        & .item{
+                            &-actions{
+                                top: 20px;
+
+                                & .actions-toolbar{
+                                    padding-left: 200px;
+                                }
+                            }
+
+
+                        }
+                    }
+
+                    &.table-wrapper{
+                        padding-right: 32px;
+                    }
+                }
+
+                & .form{
+                    &-cart{
+                        flex: 0 0 80%;
+                        max-width: 80%;
+                        background-color: @header-color;
+                    }
+                }
+
+                & .action{
+                    &.continue{
+                        padding-right: 32px !important;
+                        background-color: @header-color !important;
+                    }
+                }
+                
+                & .col{
+                    &.item{
+                        padding: 20px 24px 32px 14px !important;
+                    }
+
+                    &.qty{
+                        padding-right: 35%;
+                    }
+                }
+
+                & .product{
+                    &-item{
+                        &-name{
+                            & a{
+                                .fonts-4();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 }
 

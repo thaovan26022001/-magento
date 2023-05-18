@@ -6,15 +6,16 @@
 .owl-carousel {
     -ms-touch-action: pan-y;
     touch-action: pan-y;
-    }
+}
+.owl-carousel {
+    -ms-touch-action: none;
+    touch-action: none;
+}
 
-    .owl-carousel {
-        -ms-touch-action: none;
-        touch-action: none;
-        }
-        .sortable-handler {
-            touch-action: none;
-          }
+.sortable-handler {
+    touch-action: none;
+  }
+
 ul, ol {
     margin: 0;
 }
@@ -256,6 +257,7 @@ ul > li, ol > li {
                 width: 0 !important;
                 position: fixed;
                 top: 0;
+                bottom: 90%;
                 padding: 0;
                 &::before{
                     display: none;
@@ -1641,8 +1643,24 @@ ul > li, ol > li {
 
     &-index{
         &-index{
+
+            & .logo{
+                margin: auto;
+            }
+
+            & .subtotal{
+                position: absolute;
+                bottom: 0;
+                left: 10px;
+
+                & .price{
+                    .fonts-3();
+                }
+            }
+
             & .product{
                 &-item{
+                    padding-bottom: 10px;
                     & .product{
                         display: flex;
 
@@ -1657,25 +1675,131 @@ ul > li, ol > li {
                             max-width: 75%;
                         }
                     }
+                    &-details{
+                        padding: 8px 0;
+                        position: relative;
+                    }
+
+                    &-inner{
+                        margin: 0 0 4px !important;
+                    }
+
+                    &-name{
+                        margin: 5px 12px 5px 0;
+                        .fonts-3();
+                        &-block{
+                            .display-flex() !important;
+                            align-items: center;
+                            padding-right: 0;
+                            & .details-qty{
+                                margin-top: 0;
+
+                                & .label{
+                                    & span{
+                                        display:none;
+                                    }
+
+                                    &::after{
+                                        display: none;
+                                    }
+                                }
+                                & .value{
+                                    &::after{
+                                        content: 'Item' !important;
+                                        padding-left: 2px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
 
                 &.options{
                     display: block;
+                    margin-bottom: 8px;
+
+                    & .content{
+                        display: block !important;
+                    }
 
                     & .item-options{
-                        margin-top: 20px;
+                        margin: 0;
+                    }
+
+                    & .toggle{
+                        display: none;
+                    }
+
+                    & .label,
+                    & .values{
+                        .fonts-6();
                     }
                 }
             }
+
                 
             & .modal{
                 &-custom{
                     & .action-close{
                         margin: 0;
-                    }  
+                    } 
+                    &-overlay{
+                        display: none;
+                    } 
                 } 
                     
             }
+
+            & .custom{
+                &-slide{
+                    position: static;
+                    &._show{
+                        display: block !important;
+                    }
+
+                }
+
+            }
+            
+            & .opc{
+                &-progress{
+                    &-bar{
+                        &-item{
+                            &._active{
+                                &::before{
+                                    display: none;
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+
+                &-block{
+                    &-summary{
+                        background-color: @header-color;
+                        .display-column();
+
+                        & .table{
+                            &-totals{
+                                order: 1
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .minicart{
+                &-items{
+                    &-wrapper{
+                        max-height: 100%;
+                        padding: 15px 0 0 0;
+                    }
+                }
+            }
+
+            
         }
     }
 
@@ -1746,11 +1870,7 @@ ul > li, ol > li {
                    
                 }
 
-                &.main{
-                    &.actions{
-                        padding-bottom: 40px;
-                    }
-                }
+
             }
 
             & .col{
@@ -1806,9 +1926,23 @@ ul > li, ol > li {
                 &-towishlist{
                     display: none !important;
                 }
+
                 &.continue{
-                    float: right;
-                    border-bottom: 1px solid @border-color;
+                    float: right !important;
+                    border: none !important;
+                    padding: 20px 0 40px 0 !important;
+
+                    &::before{
+                        display: none !important;
+                    }
+
+                    & span{
+                        border-bottom: 1px solid @border-color;
+                    }
+                }
+
+                &.primary.checkout{
+                    background-color: @black-color-text !important;
                 }
 
             }
@@ -1860,7 +1994,7 @@ ul > li, ol > li {
             }
 
             & .field.note{
-                .fonts-1();
+                .fonts-1() !important;
             }
 
             & .mark{
@@ -2759,8 +2893,9 @@ input:not([disabled]):focus{
     
 }
 
-
-
+body._has-modal-custom{
+    overflow: auto
+}
 
 
 

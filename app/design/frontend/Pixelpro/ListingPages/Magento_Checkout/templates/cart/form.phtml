@@ -12,18 +12,6 @@
 <?php $mergedCells = ($this->helper(Magento\Tax\Helper\Data::class)->displayCartBothPrices() ? 2 : 1); ?>
 <?= $block->getChildHtml('form_before') ?>
 
-<div class="cart main actions">
-        <?php if ($block->getContinueShoppingUrl()): ?>
-            <a class="action continue"
-               href="<?= $block->escapeUrl($block->getContinueShoppingUrl()) ?>"
-               title="<?= $block->escapeHtml(__('Continue Shopping')) ?>">
-                <span><?= $block->escapeHtml(__('Continue Shopping')) ?></span>
-            </a>
-        <?php endif; ?>
-
-        <input type="hidden" value="" id="update_cart_action_container" data-cart-item-update=""/>
-</div>
-
 
 <form action="<?= $block->escapeUrl($block->getUrl('checkout/cart/updatePost')) ?>"
           method="post"
@@ -34,6 +22,17 @@
           }'
           class="form form-cart">
     <?= $block->getBlockHtml('formkey') ?>
+    <div class="cart main actions">
+        <?php if ($block->getContinueShoppingUrl()): ?>
+            <a class="action continue"
+               href="<?= $block->escapeUrl($block->getContinueShoppingUrl()) ?>"
+               title="<?= $block->escapeHtml(__('Continue Shopping')) ?>">
+                <span><?= $block->escapeHtml(__('Continue Shopping')) ?></span>
+            </a>
+        <?php endif; ?>
+
+        <input type="hidden" value="" id="update_cart_action_container" data-cart-item-update=""/>
+</div>
     <div class="cart table-wrapper<?= $mergedCells == 2 ? ' detailed' : '' ?>">
         <?php if ($block->getPagerHtml()): ?>
             <div class="cart-products-toolbar cart-products-toolbar-top toolbar"
